@@ -1,6 +1,5 @@
+// import useSWR from 'swr'
 import Head from 'next/head'
-import Image from 'next/image'
-import { Inter } from '@next/font/google'
 import Header from '../components/Header'
 import Hero from '../components/Hero'
 import About from '../components/About'
@@ -9,8 +8,29 @@ import Skills from '../components/Skills'
 import Projects from '../components/Projects'
 import ContactMe from '../components/ContactMe'
 import Link from 'next/link'
+import { GetStaticProps } from 'next'
+import { Experience, PageInfo, Project, Skill, Social } from '../typings'
+import { fetchPageInfo } from '../utils/fetchPageInfo'
+import { fetchExperiences } from '../utils/fetchExperiences'
+import { fetchSkills } from '../utils/fetchSkills'
+import { fetchProjects } from '../utils/fetchProjects'
+import { fetchSocials } from '../utils/fetchSocials'
+import Image from 'next/image'
 
-export default function Home() {
+
+
+type Props = {
+  pageInfo: PageInfo;
+  experiences: Experience[];
+  skills: Skill[];
+  projects: Project[];
+  socials: Social[];
+}
+
+
+
+const Home = ({ pageInfo, experiences, skills, projects, socials }: Props) => {
+  
   return (
     <div className='bg-[rgb(36,36,36)] text-white h-screen snap-y snap-mandatory overflow-scroll z-0
       overflow-y-scroll overflow-x-hidden scrollbar scrollbar-track-gray-400/20 
@@ -21,32 +41,32 @@ export default function Home() {
       </Head>
       
       {/* HEADER */}
-      <Header />
+      <Header socials={ socials }/>
 
       {/* HERO */}
       {/* remove snap-center****************************************** */}
       <section id="hero" className='snap-center'> 
-        <Hero />
+        <Hero pageInfo={pageInfo}/>
       </section>
       
       {/* ABOUT */}
       <section id="about" className='snap-center'> 
-        <About />
+        <About pageInfo={pageInfo}/>
       </section>
 
       {/* EXPERIENCE */}
       <section id="experience" className='snap-center'>
-        <WorkExperience />
+        <WorkExperience experiences={experiences}/>
       </section>
 
       {/* SKILLS */}
       <section id="skills" className='snap-start'>
-        <Skills />
+        <Skills skills={skills}/>
       </section>
 
       {/* PROJECTS */}
       <section id="projects" className='snap-start'>
-        <Projects />
+        <Projects projects={projects}/>
       </section>
 
       {/* CONTACT ME */}
@@ -57,9 +77,10 @@ export default function Home() {
       <Link href='#hero'>
         <footer className='sticky bottom-5 w-full cursor-pointer'>
           <div className='flex items-center justify-center'>
-            <img 
+            <Image 
               className='h-10 w-10 rounded-full filter grayscale hover:grayscale-0'
               src=''
+              alt=''
             />
           </div>
         </footer>
@@ -67,3 +88,25 @@ export default function Home() {
     </div>
   )
 }
+
+export default Home;
+
+export const getStaticProps: GetStaticProps<Props> = async () => {
+  const pageInfo: PageInfo = await fetchPageInfo();
+  const experiences: Experience[] = await fetchExperiences();
+  const skills: Skill[] = await fetchSkills();
+  const projects: Project[] = await fetchProjects();
+  const socials: Social[] = await fetchSocials();
+
+  return {
+    props: {
+      pageInfo,
+      experiences,
+      skills,
+      projects,
+      socials
+    },
+
+    revalidate: 10000,
+  };
+};

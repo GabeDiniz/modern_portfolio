@@ -1,9 +1,13 @@
 import React from 'react'
 import { motion } from "framer-motion";
+import { PageInfo } from '../typings';
+import { urlFor } from '../sanity';
 
-// type Props = {}
+type Props = {
+    pageInfo: PageInfo
+}
 
-export default function About({}) {
+export default function About({pageInfo}: Props) {
   return (
     <motion.div
         initial={{ opacity: 0 }}
@@ -26,21 +30,12 @@ export default function About({}) {
             transition={{
                 duration: 1.2
             }}
-            src='duplicated.jpg'
+            src={urlFor(pageInfo?.profilePic).url()}
         />
 
         <div className='space-y-10 px-0 md:px-10'>
             <h4 className='text-4xl font-semibold'>Nice to meet you</h4>
-            <p className='text-base'>As a near graduate, with a strong foundation in 
-                computer science, I am eager to embark on a career as a Software Developer. 
-                I have a passion for problem-solving and enjoy the challenge of finding 
-                innovative solutions to complex problems. With experience in languages such 
-                as JavaScript, Python, and other languages, I am confident in my ability to 
-                learn and adapt to new technologies quickly. I am excited to join a team of 
-                like-minded individuals and contribute to the development of meaningful and 
-                impactful software. My long-term goal is to become a full-stack developer, 
-                with a focus on building scalable and user-friendly applications.
-            </p>
+            <p className='text-base'>{pageInfo?.backgroundInformation}</p>
         </div>
     </motion.div>
   )
