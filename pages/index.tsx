@@ -26,7 +26,6 @@ type Props = {
 }
 
 
-
 const Home = ({ pageInfo, experiences, skills, projects, socials }: Props) => {
   
   return (
@@ -89,6 +88,7 @@ const Home = ({ pageInfo, experiences, skills, projects, socials }: Props) => {
 
 export default Home;
 
+// Client-Side rendering
 export const getStaticProps: GetStaticProps<Props> = async () => {
   const pageInfo: PageInfo = await fetchPageInfo();
   const experiences: Experience[] = await fetchExperiences();
@@ -96,6 +96,7 @@ export const getStaticProps: GetStaticProps<Props> = async () => {
   const projects: Project[] = await fetchProjects();
   const socials: Social[] = await fetchSocials();
 
+  // In the case that API is not functioning properly, return null as to not create Build errors
   return {
     props: {
       pageInfo: pageInfo || null,
