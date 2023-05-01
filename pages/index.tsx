@@ -8,7 +8,7 @@ import Skills from '../components/Skills'
 import Projects from '../components/Projects'
 import ContactMe from '../components/ContactMe'
 import Link from 'next/link'
-import { GetStaticPaths, GetStaticProps } from 'next'
+import { GetStaticProps } from 'next'
 import { Experience, PageInfo, Project, Skill, Social } from '../typings'
 import { fetchPageInfo } from '../utils/fetchPageInfo'
 import { fetchExperiences } from '../utils/fetchExperiences'
@@ -16,9 +16,6 @@ import { fetchSkills } from '../utils/fetchSkills'
 import { fetchProjects } from '../utils/fetchProjects'
 import { fetchSocials } from '../utils/fetchSocials'
 import Image from 'next/image'
-import { VoidExpression } from 'typescript'
-
-
 
 type Props = {
   pageInfo: PageInfo;
@@ -101,13 +98,13 @@ export const getStaticProps: GetStaticProps<Props> = async () => {
 
   return {
     props: {
-      pageInfo,
-      experiences,
-      skills,
-      projects,
-      socials
+      pageInfo: pageInfo || null,
+      experiences: experiences || null,
+      skills: skills || null,
+      projects: projects || null,
+      socials: socials || null
     },
-    fallback: false,
+    // fallback: false,
     revalidate: 10,
   };
 };
