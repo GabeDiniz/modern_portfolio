@@ -29,8 +29,8 @@ export default function ExperienceCard({ experience }: Props) {
         />
 
         <div className='px-0 md:px-10 flex flex-col'>
-            <h4 className='text-4xl font-light self-center'>Soft Dev.</h4>
-            <p className='font-bold text-2xl mt-1 self-center'>OpenText</p>
+            <h4 className='text-4xl font-light self-center'>{experience.jobTitle}</h4>
+            <p className='font-bold text-2xl mt-1 self-center'>{experience.company}</p>
             <div className='flex space-x-2 my-2 self-center'>
                 {/* Tech Used */}
                 {experience.technologies.map(technology => (

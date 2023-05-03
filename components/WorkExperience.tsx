@@ -9,6 +9,9 @@ type Props = {
 }
 
 export default function WorkExperience({ experiences }: Props) {
+  // Debugging
+  // console.log(experiences);
+
   return (
     <motion.div
         initial={{ opacity: 0 }}
