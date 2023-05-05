@@ -27,6 +27,7 @@ export default function Projects({ projects }: Props) {
                     key={i}
                     className='w-screen flex-shrink-0 snap-center flex flex-col space-y-5 items-center
                     justify-center p-20 md:p-44 h-screen'>
+                    
                     <motion.img
                     initial={{ 
                         opacity: 0,
@@ -36,20 +37,22 @@ export default function Projects({ projects }: Props) {
                     transition={{ duration: 1.2 }}  
                     viewport={{ once: true }}
                         src={urlFor(project?.image).url()}
+                    // className='max-w-sm'
                     />
-                    
                     <div className='space-y-10 px-0 md:px-10 max-w-6xl'>
                         <h4 className='text-4xl font-semibold text-center'>
-                            <span className='underline decoration-[#F4AB0A]/50'>
+                            <span className=''>
                                 Project {i + 1} of {projects.length}:
                             </span>{" "}
                             {project?.title}
+                            <br />
+                            <a className='text-lg underline decoration-[#F4AB0A]/50' href={project.linkToBuild}>Link to Build</a>
                         </h4>
-
+                        
                         <div className='flex items-center space-x-2 justify-center'>
                             {project?.technologies.map((technology, i) => (
                                 <img 
-                                className='h-8 w-8'
+                                className='h-8 w-8 rounded-full'
                                 key={i}
                                 src={urlFor(technology.image).url()}
                                 />
