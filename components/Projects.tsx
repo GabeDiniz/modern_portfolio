@@ -46,7 +46,7 @@ export default function Projects({ projects }: Props) {
                             </span>{" "}
                             {project?.title}
                             <br />
-                            <a className='text-lg underline decoration-[#F4AB0A]/50' href={project.linkToBuild}>Link to Build</a>
+                            <a className='text-lg underline decoration-[#F4AB0A]/50' href={project.linkToBuild} target="_blank" rel="noopener noreferrer">Link to Build</a>
                         </h4>
                         
                         <div className='flex items-center space-x-2 justify-center'>
