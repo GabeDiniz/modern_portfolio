@@ -74,10 +74,10 @@ const Home = ({ pageInfo, experiences, skills, projects, socials }: Props) => {
       <Link href='#hero'>
         <footer className='sticky bottom-5 w-full cursor-pointer'>
           <div className='flex items-center justify-center'>
-            <Image 
-              className='h-10 w-10 rounded-full filter grayscale hover:grayscale-0'
-              src=''
-              alt=''
+            <img 
+              className='h-10 w-10 rounded-full filter grayscale hover:grayscale-0 transition ease-in-out delay-150 hover:scale-110 duration-300'
+              src='BTT.png'
+              alt='back-to-the-top'
             />
           </div>
         </footer>
