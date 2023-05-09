@@ -34,7 +34,7 @@ const Home = ({ pageInfo, experiences, skills, projects, socials }: Props) => {
       scrollbar-thumb-[#F7AB0A]/80'>
       <Head>
         <title>Gabe Diniz</title>
-        <link className='rounded-full' rel="icon" href="/webicon.png" />
+        <link className='rounded-full' rel="icon" href="/GD-bg-removed.png" />
       </Head>
       
       {/* HEADER */}
