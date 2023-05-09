@@ -1,7 +1,13 @@
 module.exports = {
     content: [],
+    purge: ['.components/*.{ts}'],
     theme: {
-      extend: {},
+      
+      extend: {
+        colors: {
+          'primary': '#66FCF1'
+        },
+      },
     },
     plugins: [],
 }

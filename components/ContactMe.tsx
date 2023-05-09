@@ -43,17 +43,17 @@ export default function ContactMe({}) {
 
             <div className='space-y-10'>
                 <div className='flex items-center space-x-5 justify-center'>
-                    <PhoneIcon className='text-[#F7AB0A] h-7 w-7 animate-pulse'/>
+                    <PhoneIcon className='text-[#D4AF37] h-7 w-7 animate-pulse'/>
                     <p className='text-2xl'>289-380-3053</p>
                 </div>
 
                 <div className='flex items-center space-x-5 justify-center'>
-                    <MapPinIcon className='text-[#F7AB0A] h-7 w-7 animate-pulse'/>
+                    <MapPinIcon className='text-[#D4AF37] h-7 w-7 animate-pulse'/>
                     <p className='text-2xl'>Kitchener/Waterloo</p>
                 </div>
 
                 <div className='flex items-center space-x-5 justify-center'>
-                    <EnvelopeIcon className='text-[#F7AB0A] h-7 w-7 animate-pulse'/>
+                    <EnvelopeIcon className='text-[#D4AF37] h-7 w-7 animate-pulse'/>
                     <p className='text-2xl'>gabriel.sundiniz@gmail.com</p>
                 </div>
             </div>
@@ -67,7 +67,7 @@ export default function ContactMe({}) {
                 <input {...register('subject')} className='contactInput' placeholder='Subject' type="text" />
 
                 <textarea {...register('message')} className='contactInput' placeholder='Message'/>
-                <button type="submit" className='bg-[#F7AB0A]/80 py-3 rounded-md text-black font-bold text-lg'>
+                <button type="submit" className='bg-[#D4AF37]/80 hover:bg-[#F7AB0A]/80 py-3 rounded-md text-black font-bold text-lg'>
                     Send
                 </button>
             </form>

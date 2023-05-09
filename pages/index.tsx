@@ -1,4 +1,3 @@
-// import useSWR from 'swr'
 import Head from 'next/head'
 import Header from '../components/Header'
 import Hero from '../components/Hero'
@@ -16,6 +15,7 @@ import { fetchSkills } from '../utils/fetchSkills'
 import { fetchProjects } from '../utils/fetchProjects'
 import { fetchSocials } from '../utils/fetchSocials'
 import Image from 'next/image'
+
 
 type Props = {
   pageInfo: PageInfo;
