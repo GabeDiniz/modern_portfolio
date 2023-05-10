@@ -53,13 +53,13 @@ export default function Header({ socials }: Props) {
                 transition={{
                     duration: 1.2,
                 }} 
-                className='flex flex-row items-center text-gray-300 cursor-pointer'
+                className='flex flex-row items-center text-gray-300 cursor-pointer hover:bg-[#0d1117] hover:rounded-full'
             >
                 <SocialIcon
-                    className='cursor-pointer'
-                    network='email' 
-                    fgColor="gray" 
-                    bgColor="transparent"
+                    network='email'
+                    fgColor='gray' 
+                    bgColor='transparent'
+                    className='cursor-pointer pl-16'
                 />
                 <p className='uppercase hidden md:inline-flex text-sm text-gray-400 md:mr-6'>
                     Get In Touch
