@@ -32,8 +32,9 @@ export default function Header({ socials }: Props) {
                 <SocialIcon 
                     key={i}
                     url={social.url}
-                    fgColor="gray" 
+                    fgColor='grey'  
                     bgColor="transparent"
+                    className='rounded-full ml-1 hover:bg-hoverbg' 
                 />
             )}
         </motion.div>
@@ -53,7 +54,7 @@ export default function Header({ socials }: Props) {
                 transition={{
                     duration: 1.2,
                 }} 
-                className='flex flex-row items-center text-gray-300 cursor-pointer hover:bg-[#0d1117] hover:rounded-full'
+                className='flex flex-row items-center cursor-pointer hover:bg-hoverbg hover:rounded-full'
             >
                 <SocialIcon
                     network='email'

@@ -38,22 +38,22 @@ export default function ContactMe({}) {
         <div className='flex flex-col space-y-10'>
             <h4 className='text-4xl font-semibold text-center'>
                 I would love to get to know you. {" "}
-                <span className='underline decoration-[#F4AB0A]/50'>Want to chat?</span>
+                <span className='underline decoration-gold/50'>Want to chat?</span>
             </h4>
 
             <div className='space-y-10'>
                 <div className='flex items-center space-x-5 justify-center'>
-                    <PhoneIcon className='text-[#D4AF37] h-7 w-7 animate-pulse'/>
+                    <PhoneIcon className='text-gold h-7 w-7 animate-pulse'/>
                     <p className='text-2xl'>289-380-3053</p>
                 </div>
 
                 <div className='flex items-center space-x-5 justify-center'>
-                    <MapPinIcon className='text-[#D4AF37] h-7 w-7 animate-pulse'/>
+                    <MapPinIcon className='text-gold h-7 w-7 animate-pulse'/>
                     <p className='text-2xl'>Kitchener/Waterloo</p>
                 </div>
 
                 <div className='flex items-center space-x-5 justify-center'>
-                    <EnvelopeIcon className='text-[#D4AF37] h-7 w-7 animate-pulse'/>
+                    <EnvelopeIcon className='text-gold h-7 w-7 animate-pulse'/>
                     <p className='text-2xl'>gabriel.sundiniz@gmail.com</p>
                 </div>
             </div>
