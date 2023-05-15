@@ -35,7 +35,7 @@ export default function About({pageInfo}: Props) {
 
         <div className='space-y-10 px-0 md:px-10'>
             <h4 className='text-4xl font-semibold'>Nice to meet you</h4>
-            <p className='text-base'>{pageInfo?.backgroundInformation}</p>
+            <p className='lg:text-lg md:text-sm xs:text-sm'>{pageInfo?.backgroundInformation}</p>
         </div>
     </motion.div>
   )
