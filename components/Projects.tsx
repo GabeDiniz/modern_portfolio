@@ -29,15 +29,15 @@ export default function Projects({ projects }: Props) {
                     justify-center p-20 md:p-44 h-screen'>
                     
                     <motion.img
-                    initial={{ 
-                        opacity: 0,
-                        y: -300 
-                    }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 1.2 }}  
-                    viewport={{ once: true }}
-                        src={urlFor(project?.image).url()}
-                    // className='max-w-sm'
+                        initial={{ 
+                            opacity: 0,
+                            y: -300 
+                        }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 1.2 }}  
+                        viewport={{ once: true }}
+                            src={urlFor(project?.image).url()}
+                        className='w-[16rem] bg-cover'
                     />
                     <div className='space-y-10 px-0 md:px-10 max-w-6xl'>
                         <h4 className='text-4xl font-semibold text-center'>
@@ -52,9 +52,9 @@ export default function Projects({ projects }: Props) {
                         <div className='flex items-center space-x-2 justify-center'>
                             {project?.technologies.map((technology, i) => (
                                 <img 
-                                className='h-8 w-8 rounded-full'
-                                key={i}
-                                src={urlFor(technology.image).url()}
+                                    className='h-8 w-8 rounded-full'
+                                    key={i}
+                                    src={urlFor(technology.image).url()}
                                 />
                             ))}
                         </div>
