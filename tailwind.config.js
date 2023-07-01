@@ -24,9 +24,11 @@ module.exports = {
     },
     extend: {
       colors: {
+        bground: '#fffff',
         base: '#2a1b3d',
         lightbase: '#44318d',
         highlight: '#d83f87',
+        neutral: '#8ea1a5',
         hoverbg: '#ffffff',
         gold: '#F4AB0A',
       }

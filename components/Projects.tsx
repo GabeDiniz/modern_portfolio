@@ -21,7 +21,7 @@ export default function Projects({ projects }: Props) {
             Projects
         </h3>
         <div className='relative w-full flex overflow-x-scroll overflow-y-hidden snap-x snap-mandatory
-            z-20 scrollbar-thin scrollbar-track-gray-400/20 scrollbar-thumb-[#F7AB0A]/80'>
+            z-20 scrollbar-thin scrollbar-track-gray-400/20 scrollbar-thumb-highlight/80 mb-2'>
             {projects?.map((project, i) => (
                 <div
                     key={i}
@@ -46,7 +46,7 @@ export default function Projects({ projects }: Props) {
                             </span>{" "}
                             {project?.title}
                             <br />
-                            <a className='text-lg underline decoration-[#F4AB0A]/50' href={project.linkToBuild} target="_blank" rel="noopener noreferrer">Link to Build</a>
+                            <a className='text-lg underline decoration-highlight/50 decoration-2' href={project.linkToBuild} target="_blank" rel="noopener noreferrer">Link to Build</a>
                         </h4>
                         
                         <div className='flex items-center space-x-2 justify-center'>
@@ -66,7 +66,7 @@ export default function Projects({ projects }: Props) {
                 </div>
             ))};
         </div>
-        <div className='w-full absolute top-[30%] bg-[#f7AB0A]/10 left-0 h-[500px] -skew-y-12'/>
+        <div className='w-full absolute top-[30%] bg-highlight/10 left-0 h-[400px] -skew-y-12'/>
     </motion.div>
   )
 }

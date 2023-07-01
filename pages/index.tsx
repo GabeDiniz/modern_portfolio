@@ -29,9 +29,10 @@ type Props = {
 const Home = ({ pageInfo, experiences, skills, projects, socials }: Props) => {
   
   return (
-    <div className='bg-[rgb(36,36,36)] text-white h-screen snap-y snap-mandatory overflow-scroll z-0
+    // Background (default gray [rgb(36,36,36)])
+    <div className='bg-[rgb(40,40,40)] text-white h-screen snap-y snap-mandatory overflow-scroll z-0
       overflow-y-scroll overflow-x-hidden scrollbar scrollbar-track-gray-400/20 
-      scrollbar-thumb-[#F7AB0A]/80'>
+      scrollbar-thumb-highlight/80'>
       <Head>
         <title>Gabe Diniz</title>
         <link className='rounded-full' rel="icon" href="/GD-bg-removed.png" />
@@ -41,7 +42,7 @@ const Home = ({ pageInfo, experiences, skills, projects, socials }: Props) => {
       <Header socials={ socials }/>
 
       {/* HERO */}
-      {/* remove snap-center****************************************** */}
+      {/* Potentially remove snap-center */}
       <section id="hero" className='snap-center'> 
         <Hero pageInfo={pageInfo}/>
       </section>
