@@ -67,7 +67,7 @@ export default function ContactMe({}) {
                 <input {...register('subject')} className='contactInput' placeholder='Subject' type="text" />
 
                 <textarea {...register('message')} className='contactInput' placeholder='Message'/>
-                <button type="submit" className='bg-white/80 hover:bg-highlight/80 py-3 rounded-md text-black font-bold text-lg'>
+                <button type="submit" className='bg-white/80 hover:bg-highlight/80 py-3 rounded-md text-black font-bold text-lg transition ease-in-out delay-100'>
                     Send
                 </button>
             </form>
