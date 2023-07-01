@@ -25,16 +25,16 @@ export default function Header({ socials }: Props) {
             transition={{
                 duration: 1.2,
             }}
-            className='flex flex-row items-center'
+            className='flex flex-row items-center space-x-3'
         >
             {/* SOCIAL ICONS */}
             { socials.map((social, i) =>
                 <SocialIcon 
                     key={i}
                     url={social.url}
-                    fgColor='black'  
+                    fgColor='white'  
                     bgColor="transparent"
-                    className='rounded-full ml-2 hover:bg-highlight transition ease-in-out duration-500' 
+                    className='rounded-full hover:bg-highlight transition ease-in-out duration-500' 
                 />
             )}
         </motion.div>
@@ -58,11 +58,11 @@ export default function Header({ socials }: Props) {
             >
                 <SocialIcon
                     network='email'
-                    fgColor='gray' 
+                    fgColor='white' 
                     bgColor='transparent'
                     className='cursor-pointer pl-16'
                 />
-                <p className='uppercase hidden md:inline-flex text-sm text-gray-400 md:mr-6'>
+                <p className='uppercase hidden md:inline-flex text-sm text-white md:mr-6'>
                     Get In Touch
                 </p>
             </motion.div>
