@@ -8,6 +8,9 @@ type Props = {
 }
 
 function Skills({ skills }: Props) {
+    let sortedProducts = skills.sort(
+        (p1, p2) => (p1.progress < p2.progress) ? 1 : (p1.progress > p2.progress) ? -1 : 0);
+
   return (
     <motion.div
         initial={{ opacity: 0 }}
