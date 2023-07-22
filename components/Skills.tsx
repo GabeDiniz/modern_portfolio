@@ -8,29 +8,11 @@ type Props = {
 }
 
 function Skills({ skills }: Props) {
-    let sortedSkills = skills.sort(
-        (p1, p2) => (p1.progress < p2.progress) ? 1 : (p1.progress > p2.progress) ? -1 : 0);
 
-    // WIP
-    // const skills = [
-    //     {
-    //       name: "python",
-    //       progress: 88
-    //     },
-    //     {
-    //       name: "js",
-    //       progress: 99
-    //     },
-    //     {
-    //       name: "html",
-    //       progress: 93
-    //     },
-    //   ]
+    // Sort Skills by proficiency 
+    skills.sort(
+        (p1, p2) => (p1.progress < p2.progress) ? 1 : (p1.progress > p2.progress) ? -1 : 0);
         
-    //   let sortedProducts = skills.sort(
-    //       (p1, p2) => (p1.progress < p2.progress) ? 1 : (p1.progress > p2.progress) ? -1 : 0);
-        
-    //   console.log(sortedProducts)
     return (
         <motion.div
             initial={{ opacity: 0 }}
