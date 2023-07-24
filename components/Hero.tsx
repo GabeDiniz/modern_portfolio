@@ -23,7 +23,9 @@ export default function Hero({ pageInfo }: Props) {
     
     return (
         <div className='h-screen flex flex-col space-y-8 items-center justify-center text-center overflow-hidden'>
-            <BackgroundCircles />
+            <div className='relative'>
+                <BackgroundCircles />
+            </div>
             <img 
                 className='relative rounded-full h-64 w-64 mx-auto object-cover'
                 src={urlFor(pageInfo.heroImage).url()}
