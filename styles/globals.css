@@ -13,4 +13,8 @@
         placeholder-gray-500 transition-all focus:border-highlight/40 border-b-2
         focus:text-white/80
     }
+    .debug {
+        @apply border-b border-b-2
+    }
+    
 }
