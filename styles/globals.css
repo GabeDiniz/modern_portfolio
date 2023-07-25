@@ -4,8 +4,8 @@
 
 @layer components {
     .heroButton {
-        @apply px-6 py-2 border border-[#242424] rounded-full uppercase text-xs tracking-widest text-gray-500 
-        transition-all border-opacity-0 hover:border-highlight/40 hover:text-highlight/40
+        @apply px-6 py-2 border border-[#242424] rounded-full uppercase text-sm font-bold tracking-widest text-gray-500 
+        transition-all border-opacity-0 hover:border-highlight/80 hover:text-highlight/80
     }
     /* old bg slate-400 */
     .contactInput {
@@ -16,5 +16,5 @@
     .debug {
         @apply border-b border-b-2
     }
-    
+
 }
