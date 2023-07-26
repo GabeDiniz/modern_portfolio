@@ -26,10 +26,16 @@ export default function Hero({ pageInfo }: Props) {
             <div className='relative'>
                 <BackgroundCircles />
             </div>
+            {/* WORKING */}
             <div className='relative h-64 w-64 max-w-full rounded-full shadow-2xl overflow-hidden'>
                 <img className='absolute inset-0 w-full h-full object-cover' src={urlFor(pageInfo.heroImage).url()} alt=''/>
                 <img className='asbolute inset-0 w-full h-full object-cover' src='BTT.png' alt=''/>
             </div>
+            {/* TESTING */}
+            {/* <div className='relative h-64 w-64 max-w-full bg-cover overflow-hidden'>
+                <img className='asbolute inset-0 w-full h-full object-cover' src='blobW.png' alt=''/>
+                <img className='mix-blend-screen absolute inset-0 w-full h-full object-cover' src={urlFor(pageInfo.heroImage).url()} alt=''/>
+            </div> */}
             <div className='z-20'>
                 {/* Job Role */}
                 <h2 className='text-md font-bold uppercase text-gray-500 pb-2 tracking-[15px]'>

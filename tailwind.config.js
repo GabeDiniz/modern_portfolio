@@ -23,6 +23,9 @@ module.exports = {
       // => @media (min-width: 1536px) { ... }
     },
     extend: {
+      backgroundImage: {
+        blob: `url('/blob.png')`,
+      },
       colors: {
         bground: '#fffff',
         bglight: '#3d3a3d',
@@ -32,7 +35,7 @@ module.exports = {
         neutral: '#8ea1a5',
         hoverbg: '#ffffff',
         gold: '#F4AB0A',
-      }
+      },
     },
   },
   plugins: [require('tailwind-scrollbar')],
