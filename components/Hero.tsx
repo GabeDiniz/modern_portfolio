@@ -27,9 +27,8 @@ export default function Hero({ pageInfo }: Props) {
                 <BackgroundCircles />
             </div>
             {/* WORKING */}
-            <div className='relative h-64 w-64 max-w-full rounded-full shadow-2xl overflow-hidden'>
+            <div className='relative h-64 w-64 max-w-full rounded-full shadow-2xl overflow-hidden animatecss animatecss-backInUp animatecss-delay-2s'>
                 <img className='absolute inset-0 w-full h-full object-cover' src={urlFor(pageInfo.heroImage).url()} alt=''/>
-                <img className='asbolute inset-0 w-full h-full object-cover' src='BTT.png' alt=''/>
             </div>
             {/* TESTING */}
             {/* <div className='relative h-64 w-64 max-w-full bg-cover overflow-hidden'>
