@@ -14,7 +14,7 @@
         focus:text-white/80
     }
     .debug {
-        @apply border-b border-b-2
+        @apply border border-2
     }
 
 }
