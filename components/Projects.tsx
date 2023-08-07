@@ -17,19 +17,20 @@ export default function Projects({ projects }: Props) {
         className='h-screen flex relative flex-col text-left max-w-full
             mx-auto items-center z-0'
     >
-        <h3 className='uppercase tracking-[20px] text-gray-500 text-2xl'>
+        <h3 className='uppercase mb-2 tracking-[20px] text-gray-500 text-2xl mt-24'>
             Projects
         </h3>
-        <h3 className='uppercase tracking-[3px] text-gray-500 text-sm debug'>
+        <h3 className='uppercase mb-6 2xl:mb-14 tracking-[3px] text-gray-500 text-sm'>
                 Click on the icon to view the build
             </h3>
-        <div className='relative w-full flex content-start justify-start overflow-x-scroll overflow-y-hidden snap-x snap-mandatory
-            z-20 scrollbar-thin scrollbar-track-gray-400/20 scrollbar-thumb-highlight/80 debug'>
+        <div className='relative w-full flex overflow-x-scroll overflow-y-hidden snap-x snap-mandatory
+            z-20 scrollbar-thin scrollbar-track-gray-400/20 scrollbar-thumb-highlight/80'>
             {projects?.map((project, i) => (
+                // Each Project
                 <div
                     key={i}
                     className='w-screen flex-shrink-0 snap-center flex flex-col space-y-5 items-center
-                    justify-center p-20 md:p-44 h-screen'
+                     h-screen'
                 >
                     <motion.img
                         initial={{ 
@@ -40,9 +41,9 @@ export default function Projects({ projects }: Props) {
                         transition={{ duration: 1.2 }}  
                         viewport={{ once: true }}
                             src={urlFor(project?.image).url()}
-                        className='w-[16rem] bg-cover debug'
+                        className='w-[16rem] bg-cover'
                     />
-                    <div className='space-y-10 px-0 md:px-10 max-w-6xl debug'>
+                    <div className='space-y-10 px-0 md:px-10 max-w-6xl'>
                         <h4 className='text-4xl font-semibold text-center'>
                             <span className=''>
                                 Project {i + 1} of {projects.length}:
