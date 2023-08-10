@@ -35,13 +35,14 @@ export default function Projects({ projects }: Props) {
                     <motion.img
                         initial={{ 
                             opacity: 0,
-                            y: -300 
+                            y: -100 
                         }}
-                        whileInView={{ opacity: 1, y: 0 }}
+                        // whileInView={{ opacity: 1, y: 0 }}
+                        animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 1.2 }}  
                         viewport={{ once: true }}
-                            src={urlFor(project?.image).url()}
-                        className='w-[12rem] bg-cover'
+                        src={urlFor(project?.image).url()}
+                        className='w-[12rem] h-auto bg-cover'
                     />
                     <div className='space-y-10 px-0 md:px-10 max-w-6xl'>
                         <h4 className='text-4xl font-semibold text-center'>
