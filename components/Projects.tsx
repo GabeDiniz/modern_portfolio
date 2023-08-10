@@ -30,7 +30,7 @@ export default function Projects({ projects }: Props) {
                 <a href={project.linkToBuild} target="_blank" rel="noopener noreferrer">
                     <div
                         key={i}
-                        className='hover:bg-slate-500 transition-all duration-200 rounded m-5 flex items-start p-3'
+                        className='border border-opacity-5 hover:glossyBG transition-all duration-200 rounded m-5 flex items-start p-3 py-5'
                     >
                         <motion.img
                             initial={{ 
@@ -44,7 +44,7 @@ export default function Projects({ projects }: Props) {
                             src={urlFor(project?.image).url()}
                             className='w-[5rem] h-auto bg-cover mr-4'
                         />
-                        <div className='max-w-6xl'>
+                        <div className='max-w-6xl space-y-3'>
                             {/* Project Title */}
                             <h4 className='text-2xl font-semibold'>
                                 {/* <span className=''>

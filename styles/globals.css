@@ -13,6 +13,9 @@
         placeholder-gray-500 transition-all focus:border-highlight/40 border-b-2
         focus:text-white/80
     }
+    .glossyBG {
+        @apply bg-white bg-opacity-30 rounded shadow-md backdrop-filter backdrop-blur-sm border border-opacity-5 border-white
+    }
     .debug {
         @apply border border-2
     }
