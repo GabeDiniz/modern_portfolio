@@ -21,6 +21,8 @@ module.exports = {
 
       '2xl': '1536px',
       // => @media (min-width: 1536px) { ... }
+      'short': { 'raw': '(max-height: 800px)' },
+        // => @media (min-height: 800px) { ... }
     },
     extend: {
       backgroundImage: {
