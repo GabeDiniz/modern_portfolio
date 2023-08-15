@@ -23,14 +23,14 @@ export default function Projects({ projects }: Props) {
         <h3 className='uppercase mb-6 2xl:mb-14 tracking-[3px] text-gray-500 text-sm'>
                 Click on the icon to view the build
             </h3>
-        <div className='relative w-full flex overflow-x-scroll overflow-y-hidden
+        <div className='relative w-full px-10 flex overflow-x-scroll overflow-y-hidden
             z-20 scrollbar-thin scrollbar-track-gray-400/20 scrollbar-thumb-highlight/80'>
             {projects?.map((project, i) => (
                 // Each Project
                 <a href={project.linkToBuild} target="_blank" rel="noopener noreferrer">
                     <div
                         key={i}
-                        className='border border-opacity-5 hover:glossyBG transition-all duration-200 rounded m-5 flex items-start p-3 py-5'
+                        className='border border-transparent hover:glossyBG transition-all duration-200 rounded m-5 flex items-start p-3 py-5'
                     >
                         <motion.img
                             initial={{ 
