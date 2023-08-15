@@ -23,53 +23,54 @@ export default function Projects({ projects }: Props) {
         <h3 className='uppercase mb-6 2xl:mb-14 tracking-[3px] text-gray-500 text-sm'>
                 Click on the icon to view the build
             </h3>
-        <div className='relative w-full flex overflow-x-scroll overflow-y-hidden snap-x snap-mandatory
+        <div className='relative w-full px-10 flex overflow-x-scroll overflow-y-hidden
             z-20 scrollbar-thin scrollbar-track-gray-400/20 scrollbar-thumb-highlight/80'>
             {projects?.map((project, i) => (
                 // Each Project
-                <div
-                    key={i}
-                    className='w-screen flex-shrink-0 snap-center flex flex-col space-y-5 items-center
-                     h-screen'
-                >
-                    <motion.img
-                        initial={{ 
-                            opacity: 0,
-                            y: -100 
-                        }}
-                        // whileInView={{ opacity: 1, y: 0 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 1.2 }}  
-                        viewport={{ once: true }}
-                        src={urlFor(project?.image).url()}
-                        className='w-[12rem] h-auto bg-cover'
-                    />
-                    <div className='space-y-10 px-0 md:px-10 max-w-6xl'>
-                        <h4 className='text-4xl font-semibold text-center'>
-                            <span className=''>
-                                Project {i + 1} of {projects.length}:
-                            </span>{" "}
-                            {project?.title}
-                            <br />
-                            <a className='text-lg underline decoration-highlight/50 hover:decoration-highlight/90 decoration-2' href={project.linkToBuild} target="_blank" rel="noopener noreferrer">Link to Build</a>
-                        </h4>
+                <a href={project.linkToBuild} target="_blank" rel="noopener noreferrer">
+                    <div
+                        key={i}
+                        className='border border-transparent hover:glossyBG transition-all duration-200 rounded m-5 flex items-start p-3 py-5'
+                    >
+                        <motion.img
+                            initial={{ 
+                                opacity: 0,
+                                y: -100 
+                            }}
+                            // whileInView={{ opacity: 1, y: 0 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            transition={{ duration: 1.2 }}  
+                            viewport={{ once: true }}
+                            src={urlFor(project?.image).url()}
+                            className='w-[5rem] h-auto bg-cover mr-4'
+                        />
+                        <div className='max-w-6xl space-y-3'>
+                            {/* Project Title */}
+                            <h4 className='text-2xl font-semibold'>
+                                {/* <span className=''>
+                                    Project {i + 1} of {projects.length}:
+                                </span>{" "} */}
+                                {project?.title}
+                                <br />
+                                {/* <a className='text-lg underline decoration-highlight/50 hover:decoration-highlight/90 decoration-2' href={project.linkToBuild} target="_blank" rel="noopener noreferrer">Link to Build</a> */}
+                            </h4>
+                            <div className='flex space-x-2'>
+                                {project?.technologies.map((technology, i) => (
+                                    <img 
+                                        className='h-8 w-8 rounded-full'
+                                        key={i}
+                                        src={urlFor(technology.image).url()}
+                                    />
+                                ))}
+                            </div>
                         
-                        <div className='flex items-center space-x-2 justify-center'>
-                            {project?.technologies.map((technology, i) => (
-                                <img 
-                                    className='h-8 w-8 rounded-full'
-                                    key={i}
-                                    src={urlFor(technology.image).url()}
-                                />
-                            ))}
+                            <p className='text-md text-center md:text-left'>
+                                {project?.summary}
+                            </p>
                         </div>
-                    
-                        <p className='text-md text-center md:text-left'>
-                            {project?.summary}
-                        </p>
                     </div>
-                </div>
-            ))};
+                </a>
+            ))}
         </div>
         <div className='w-full absolute top-[30%] bg-highlight/10 left-0 h-[400px] -skew-y-12'/>
     </motion.div>
