@@ -27,7 +27,7 @@ export default function Projects({ projects }: Props) {
             z-20 scrollbar-thin scrollbar-track-gray-400/20 scrollbar-thumb-highlight/80'>
             {projects?.map((project, i) => (
                 // Each Project
-                <a href={project.linkToBuild} target="_blank" rel="noopener noreferrer">
+                <a key={i} href={project.linkToBuild} target="_blank" rel="noopener noreferrer">
                     <div
                         key={i}
                         className='border border-transparent hover:glossyBG transition-all duration-200 rounded m-5 flex items-start p-3 py-5'
@@ -42,6 +42,7 @@ export default function Projects({ projects }: Props) {
                             transition={{ duration: 1.2 }}  
                             viewport={{ once: true }}
                             src={urlFor(project?.image).url()}
+                            alt='Project-Image'
                             className='w-[5rem] h-auto bg-cover mr-4'
                         />
                         <div className='max-w-6xl space-y-3'>
