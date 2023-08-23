@@ -30,7 +30,7 @@ const Home = ({ pageInfo, experiences, skills, projects, socials }: Props) => {
   
   return (
     // Background (default gray [rgb(36,36,36)])
-    <div className='bg-bground text-white h-screen snap-y snap-mandatory overflow-scroll z-0
+    <div className='bg-bgmain_blue text-white h-screen snap-y snap-mandatory overflow-scroll z-0
       overflow-y-scroll overflow-x-hidden scrollbar scrollbar-track-gray-400/20 
       scrollbar-thumb-highlight/80 scroll-smooth transition duration-150 ease-in-out0'>
       <Head>

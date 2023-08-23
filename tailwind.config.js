@@ -29,7 +29,7 @@ module.exports = {
         blob: `url('/blob.png')`,
       },
       colors: {
-        bgmain_blue: '#111F43',
+        bgmain_blue: '#0e1017',
         bground: '#282828',
         bglight: '#3d3a3d',
         base: '#2a1b3d',
