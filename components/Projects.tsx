@@ -23,7 +23,7 @@ export default function Projects({ projects }: Props) {
         <h3 className='uppercase mb-6 2xl:mb-14 tracking-[3px] text-gray-500 text-sm'>
                 Click on the icon to view the build
             </h3>
-        <div className='relative w-full px-10 flex overflow-x-scroll overflow-y-hidden
+        <div className='relative grid grid-cols-2 px-10 overflow-x-scroll overflow-y-hidden
             z-20 scrollbar-thin scrollbar-track-gray-400/20 scrollbar-thumb-highlight/80'>
             {projects?.map((project, i) => (
                 // Each Project
@@ -55,7 +55,7 @@ export default function Projects({ projects }: Props) {
                                 <br />
                                 {/* <a className='text-lg underline decoration-highlight/50 hover:decoration-highlight/90 decoration-2' href={project.linkToBuild} target="_blank" rel="noopener noreferrer">Link to Build</a> */}
                             </h4>
-                            <div className='flex space-x-2'>
+                            <div className='flex = space-x-2'>
                                 {project?.technologies.map((technology, i) => (
                                     <img 
                                         className='h-8 w-8 rounded-full'
