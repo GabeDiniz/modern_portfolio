@@ -12,9 +12,11 @@ type Props = {
 export default function ExperienceCard({ experience }: Props) {
   return (
     <article 
-        className='flex flex-col rounded-lg items-center space-y-7 flex-shrink-0 w-[600px] md:w-[710px] 
+        className='flex flex-col relative rounded-lg items-center space-y-7 flex-shrink-0 w-[600px] md:w-[710px] 
         xl:w-[1100px] snap-center bg-bglight p-10 hover:opacity-100 opacity-50 transition-opacity duration-200'
     >
+        {/* Pink Overlay */}
+        {/* <div className='w-full z-0 absolute bg-highlight/30 left-0 h-[150px] -skew-y-3'/> */}
         <motion.img
             initial={{
                 y: -100, 
@@ -23,10 +25,9 @@ export default function ExperienceCard({ experience }: Props) {
             transition={{ duration: 1.2 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className='w-24 h-24 rounded-full xl:w-[100px] xl:h-[100px] object-cover object-center' 
+            className='w-24 h-24 z-20 rounded-full xl:w-[100px] xl:h-[100px] object-cover object-center' 
             src={urlFor(experience?.companyImage).url()}
         />
-
         <div className='relative px-0 md:px-10 flex flex-col'>
             <h4 className='text-4xl font-light self-center'>{experience.jobTitle}</h4>
             <p className='font-bold text-2xl mt-1 self-center'>{experience.company}</p>
@@ -47,7 +48,7 @@ export default function ExperienceCard({ experience }: Props) {
             <p className='uppercase py-5 text-gray-300'>
                 {new Date(experience.dateStarted).toDateString()} - 
                 {experience.isCurrentlyWorkingHere 
-                ? "Present" 
+                ? " Present" 
                 : new Date(experience.dateEnded).toDateString()}
             </p>
             <ul className='list-disc space-y-4 ml-5 text-sm'>
@@ -56,7 +57,8 @@ export default function ExperienceCard({ experience }: Props) {
                 ))}
             </ul>
         </div>
-        <div className='w-full absolute top-6 bg-highlight/10 left-0 h-[150px] -skew-y-3'/>
+        {/* Pink Overlay */}
+        {/* <div className='w-full absolute top-6 bg-highlight/10 left-0 h-[150px] -skew-y-3'/> */}
     </article>
     
   )

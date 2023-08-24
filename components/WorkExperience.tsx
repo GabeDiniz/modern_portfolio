@@ -23,7 +23,6 @@ export default function WorkExperience({ experiences }: Props) {
         <h3 className='absolute xl:top-24 md:top-20 uppercase tracking-[20px] text-gray-500 text-2xl'>
             Experience
         </h3>
-
         <div className='w-full flex space-x-5 overflow-x-scroll p-10 snap-x snap-mandatory scrollbar-thin 
         scrollbar-track-gray-400/20 scrollbar-thumb-highlight/80'>
             {experiences?.map((experience, index) => (
