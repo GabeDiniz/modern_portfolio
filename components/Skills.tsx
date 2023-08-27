@@ -31,7 +31,7 @@ absolute top-36 */}
                 Hover over a skill to see what it is and my proficiency
             </h3>
 
-            <div className='grid grid-cols-4 gap-5'>
+            <div className='grid grid-cols-4 short:grid-cols-5 shorter:grid-cols-6 gap-5'>
                 {skills?.map((skill, i) => (
                     <Skill key={i} skill={skill}/>
                 ))}

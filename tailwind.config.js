@@ -21,7 +21,9 @@ module.exports = {
 
       '2xl': '1536px',
       // => @media (min-width: 1536px) { ... }
-      'short': { 'raw': '(max-height: 800px)' },
+      'short': { 'raw': '(max-height: 850px)' },
+        // => @media (min-height: 800px) { ... }
+      'shorter': { 'raw': '(max-height: 690px)' },
         // => @media (min-height: 800px) { ... }
     },
     extend: {
