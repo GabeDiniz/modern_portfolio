@@ -14,7 +14,7 @@ export default function ExperienceCard({ experience }: Props) {
     return (
     <article 
         className='flex flex-col relative rounded-lg items-center space-y-7 flex-shrink-0 w-[600px] md:w-[710px] 
-        xl:w-[1100px] snap-center bg-bglight p-10 hover:opacity-100 opacity-50 transition-opacity duration-200'
+                xl:w-[1100px] snap-center bg-bground p-10 hover:opacity-100 opacity-50 transition-opacity duration-200'
     >
         {/* Pink Overlay */}
         {/* <div className='w-full z-0 absolute bg-highlight/30 left-0 h-[150px] -skew-y-3'/> */}
@@ -29,10 +29,10 @@ export default function ExperienceCard({ experience }: Props) {
             className='w-24 h-24 z-20 rounded-full xl:w-[100px] xl:h-[100px] object-cover object-center' 
             src={urlFor(experience?.companyImage).url()}
         />
-        <div className='relative px-0 md:px-10 flex flex-col'>
-            <h4 className='text-4xl font-light self-center'>{experience.jobTitle}</h4>
+        <div className='relative md:px-10 flex flex-col'>
+            <h4 className='uppercase text-2xl md:text-3xl font-light self-center'>{experience.jobTitle}</h4>
             <p className='font-bold text-2xl mt-1 self-center'>{experience.company}</p>
-            <div className='flex space-x-2 my-2 self-center'>
+            <div className='flex flex-wrap space-x-2 my-2 self-center'>
                 {/* Tech Used */}
                 {experience.technologies.map((technology, index) => (
                     (
@@ -52,7 +52,7 @@ export default function ExperienceCard({ experience }: Props) {
                 ? "Present" 
                 : new Date(experience.dateEnded).toDateString().slice(4)}
             </p>
-            <ul className='list-disc space-y-4 ml-5 text-sm'>
+            <ul className='list-disc space-y-4 ml-5 text-xs md:text-sm lg:text-base'>
                 {experience.points.map((point, i) => (
                     <li key={i}>{point}</li>
                 ))}

@@ -34,7 +34,7 @@ module.exports = {
         bgmain_blue: '#0e1017',
         bground: '#282828',
         bglight: '#3d3a3d',
-        base: '#2a1b3d',
+        cbase: '#2a1b3d',
         lightbase: '#44318d',
         highlight: '#d83f87',
         neutral: '#8ea1a5',
