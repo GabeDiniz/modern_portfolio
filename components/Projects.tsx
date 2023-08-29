@@ -45,8 +45,8 @@ export default function Projects({ projects }: Props) {
             Projects
         </h3>
         <h3 className='uppercase mb-6 2xl:mb-14 tracking-[3px] text-gray-500 text-sm'>
-                Click on the icon to view the build
-            </h3>
+                Click on the card to view the build
+        </h3>
         <div className='relative grid grid-cols-2 px-10 overflow-x-scroll overflow-y-hidden
             z-20 scrollbar-thin scrollbar-track-gray-400/20 scrollbar-thumb-highlight/80'>
             {projects?.map((project, i) => (
