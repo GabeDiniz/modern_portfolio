@@ -30,7 +30,7 @@ export default function Projects({ projects }: Props) {
                 <a key={i} href={project.linkToBuild} target="_blank" rel="noopener noreferrer">
                     <div
                         key={i}
-                        className='border border-transparent hover:glossyBG transition-all duration-200 rounded m-5 flex items-start p-3 py-5'
+                        className='border border-transparent hover:glossyBG hover:text-highlight transition-all duration-200 rounded m-5 flex items-start p-3 py-5'
                     >
                         <motion.img
                             initial={{ 
@@ -65,7 +65,7 @@ export default function Projects({ projects }: Props) {
                                 ))}
                             </div>
                         
-                            <p className='text-md text-center md:text-left'>
+                            <p className='text-md text-center md:text-left text-white'>
                                 {project?.summary}
                             </p>
                         </div>
