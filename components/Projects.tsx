@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import { motion } from 'framer-motion'
 import { Project } from '../typings'
 import { urlFor } from '../lib/sanity';
@@ -8,8 +8,32 @@ type Props = {
 }
 
 export default function Projects({ projects }: Props) {
+    const [viewSummary, setViewSummary] = useState(true);
 
-  return (
+    function checkSize() {
+        if (window.innerWidth < 990) {
+            setViewSummary(true);
+        } else {
+            setViewSummary(false);
+        }
+    }
+    useEffect(() => {
+        checkSize()
+        function handleResize() {
+          console.log('resized to: ', window.innerWidth, 'x', window.innerHeight);
+          checkSize(); // Call checkSize to update viewSummary when the window is resized
+        }
+    
+        window.addEventListener('resize', handleResize);
+    
+        // Cleanup the event listener when the component is unmounted
+        return () => {
+          window.removeEventListener('resize', handleResize);
+        };
+      }, [])
+      
+
+    return (
     <motion.div
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
@@ -64,10 +88,13 @@ export default function Projects({ projects }: Props) {
                                     />
                                 ))}
                             </div>
-                        
-                            <p className='text-md text-center md:text-left text-white'>
-                                {project?.summary}
-                            </p>
+                            {
+                                viewSummary ? 
+                                <></> : 
+                                <p className='text-md text-center md:text-left text-white'>
+                                    {project?.summary}
+                                </p>
+                            }
                         </div>
                     </div>
                 </a>
