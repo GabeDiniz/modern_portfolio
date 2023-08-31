@@ -2,13 +2,13 @@ import { motion } from 'framer-motion'
 import React from 'react'
 import Skill from './Skill'
 import { Skill as SkillType } from '../typings'
+// import { Tooltip } from "@nextui-org/react"
 
 type Props = {
     skills: SkillType[]
 }
 
 function Skills({ skills }: Props) {
-
     // Sort Skills by proficiency 
     skills.sort(
         (p1, p2) => (p1.progress < p2.progress) ? 1 : (p1.progress > p2.progress) ? -1 : 0);
