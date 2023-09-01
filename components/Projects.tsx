@@ -47,7 +47,7 @@ export default function Projects({ projects }: Props) {
             <h3 className='uppercase mb-6 2xl:mb-14 tracking-[3px] text-gray-500 text-sm'>
                     Click on the card to view the build
             </h3>
-            <div className='relative grid grid-cols-2 gap-8 px-10 overflow-x-scroll overflow-y-hidden
+            <div className='relative grid grid-cols-2 short:gap-4 gap-8 px-10 overflow-x-scroll overflow-y-hidden
                 z-20 scrollbar-thin scrollbar-track-gray-400/20 scrollbar-thumb-highlight/80'>
                 {projects?.map((project, i) => (
                     // Each Project
@@ -71,7 +71,7 @@ export default function Projects({ projects }: Props) {
                             />
                             <div className='max-w-6xl space-y-3'>
                                 {/* Project Title */}
-                                <h4 className='text-2xl font-semibold'>
+                                <h4 className='short:text-xl text-2xl font-semibold'>
                                     {/* <span className=''>
                                         Project {i + 1} of {projects.length}:
                                     </span>{" "} */}
@@ -91,7 +91,7 @@ export default function Projects({ projects }: Props) {
                                 {
                                     viewSummary ? 
                                     <></> : 
-                                    <p className='text-md text-center md:text-left text-white'>
+                                    <p className='short:text-sm text-md text-center md:text-left text-white'>
                                         {project?.summary}
                                     </p>
                                 }
