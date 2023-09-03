@@ -30,8 +30,8 @@ export default function ExperienceCard({ experience }: Props) {
                 src={urlFor(experience?.companyImage).url()}
             />
             <div className='relative md:px-10 flex flex-col'>
-                <h4 className='uppercase text-2xl md:text-3xl font-light self-center'>{experience.jobTitle}</h4>
-                <p className='font-bold text-2xl mt-1 self-center'>{experience.company}</p>
+                <h4 className='uppercase text-2xl md:text-3xl short:text-xl font-light self-center'>{experience.jobTitle}</h4>
+                <p className='font-bold text-2xl short:text-xl mt-1 self-center'>{experience.company}</p>
                 <div className='flex flex-wrap space-x-2 my-2 self-center'>
                     {/* Tech Used */}
                     {experience.technologies.map((technology, index) => (
@@ -39,7 +39,7 @@ export default function ExperienceCard({ experience }: Props) {
                             technology?.image &&
                             <img
                             key={index}
-                            className='h-10 w-10 rounded-full'
+                            className='h-10 w-10 short:h-6 short:w-6 rounded-full'
                             src={urlFor(technology?.image).url()} 
                             alt=''
                             />
@@ -52,7 +52,7 @@ export default function ExperienceCard({ experience }: Props) {
                     ? "Present" 
                     : new Date(experience.dateEnded).toDateString().slice(4)}
                 </p>
-                <ul className='list-disc space-y-4 ml-5 text-xs md:text-sm lg:text-base'>
+                <ul className='list-disc space-y-4 ml-5 text-xs md:text-sm lg:text-base short:text-xs'>
                     {experience.points.map((point, i) => (
                         <li key={i}>{point}</li>
                     ))}
