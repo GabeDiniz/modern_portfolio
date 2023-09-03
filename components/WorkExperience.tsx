@@ -21,7 +21,7 @@ export default function WorkExperience({ experiences }: Props) {
             px-10 justify-center mx-auto items-center"
     >
       {/* absolute xl:top-24 md:top-20 */}
-      <h3 className="uppercase mt-20 short:mt-32 md:mt-2 tracking-[20px] text-gray-500 text-2xl">
+      <h3 className="uppercase mt-20 md:mt-2 tracking-[20px] text-gray-500 text-2xl">
         Experience
       </h3>
       <div
