@@ -10,7 +10,8 @@ type Props = {
 };
 
 export default function ExperienceCard({ experience }: Props) {
-    //console.log(new Date(experience.dateStarted).toDateString())
+    const regex = /( [0-9]{2} )/i
+    // console.log(new Date(experience.dateStarted).toDateString().slice(4).replace(regex, " "))
     return (
         <article 
             className='flex flex-col relative rounded-lg items-center space-y-7 flex-shrink-0 w-[600px] md:w-[710px] 
@@ -47,7 +48,7 @@ export default function ExperienceCard({ experience }: Props) {
                     ))}
                 </div>
                 <p className='uppercase py-5 text-gray-300'>
-                    {new Date(experience.dateStarted).toDateString().slice(4) + ' - '}
+                    {new Date(experience.dateStarted).toDateString().slice(4).replace(regex, " ") + ' - '}
                     {experience.isCurrentlyWorkingHere 
                     ? "Present" 
                     : new Date(experience.dateEnded).toDateString().slice(4)}
