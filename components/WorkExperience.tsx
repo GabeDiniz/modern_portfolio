@@ -17,7 +17,7 @@ export default function WorkExperience({ experiences }: Props) {
       initial={{ opacity: 0 }}
       whileInView={{ opacity: 1 }}
       transition={{ duration: 1.5 }}
-      className="h-screen flex relative overflow-hidden flex-col text-left max-w-full 
+      className="h-screen flex relative overflow-hidden flex-col text-left max-w-full  
             px-10 justify-center mx-auto items-center"
     >
       {/* absolute xl:top-24 md:top-20 */}
