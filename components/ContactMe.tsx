@@ -27,32 +27,32 @@ export default function ContactMe({}) {
       className="h-screen flex relative flex-col text-center md:text-left max-w-7xl px-10 
                 mx-auto items-center"
     >
-      <h3 className="mt-24 uppercase tracking-[20px] text-gray-500 text-2xl">
+      <h3 className="mt-24 short:mt-20 uppercase tracking-[20px] text-gray-500 text-2xl short:text-xl">
         Contact Me
       </h3>
 
-      <div className="shorter:mt-6 mt-16 flex flex-col space-y-6">
-        <h4 className="text-3xl shorter:text-4xl font-semibold text-center">
+      <div className="short:mt-6 mt-16 flex flex-col space-y-10">
+        <h4 className="text-3xl short:text-2xl font-semibold text-center">
           I would love to get to know you.{" "}
           <span className="underline decoration-highlight/50">
             Want to chat?
           </span>
         </h4>
 
-        <div className="shorter:space-y-10 space-y-4">
+        <div className="short:space-y-4 space-y-8">
           <div className="flex items-center space-x-5 justify-center">
             <PhoneIcon className="text-highlight h-7 w-7 animate-pulse" />
-            <p className="text-2xl">289-380-3053</p>
+            <p className="text-2xl short:text-lg">289-380-3053</p>
           </div>
 
           <div className="flex items-center space-x-5 justify-center">
             <MapPinIcon className="text-highlight h-7 w-7 animate-pulse" />
-            <p className="text-2xl">Kitchener/Waterloo</p>
+            <p className="text-2xl short:text-lg">Kitchener/Waterloo</p>
           </div>
 
           <div className="flex items-center space-x-5 justify-center">
             <EnvelopeIcon className="text-highlight h-7 w-7 animate-pulse" />
-            <p className="text-2xl">gabriel.sundiniz@gmail.com</p>
+            <p className="text-2xl short:text-lg">gabriel.sundiniz@gmail.com</p>
           </div>
         </div>
 
