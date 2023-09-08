@@ -20,7 +20,7 @@ export default function Projects({ projects }: Props) {
   useEffect(() => {
     checkSize();
     function handleResize() {
-      console.log("resized to: ", window.innerWidth, "x", window.innerHeight);
+      // console.log("resized to: ", window.innerWidth, "x", window.innerHeight);
       checkSize(); // Call checkSize to update viewSummary when the window is resized
     }
 
