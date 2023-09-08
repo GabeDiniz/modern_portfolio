@@ -31,7 +31,7 @@ export default function ContactMe({}) {
         Contact Me
       </h3>
 
-      <div className="mt-6 flex flex-col space-y-6">
+      <div className="shorter:mt-6 mt-16 flex flex-col space-y-6">
         <h4 className="text-3xl shorter:text-4xl font-semibold text-center">
           I would love to get to know you.{" "}
           <span className="underline decoration-highlight/50">
