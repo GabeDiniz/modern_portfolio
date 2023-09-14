@@ -18,6 +18,10 @@ export default function About({ pageInfo }: Props) {
       <h3 className="absolute top-24 uppercase tracking-[20px] text-gray-500 text-2xl">
         About Me
       </h3>
+      <h3 className="absolute top-36  text-gray-500 text-xl">
+        Please note I'm still working on this website... just keep that in mind
+        while you rummage through and notice missing content :)
+      </h3>
 
       <motion.img
         className="-mb-20 md:mb-0 flex-shrink-0 w-56 h-56 lg:rounded-3xl rounded-full object-cover md:text-sm md:w-[350px] md:h-[350px] xl:w-[400px] xl:h-[400px]"
