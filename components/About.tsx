@@ -19,7 +19,7 @@ export default function About({ pageInfo }: Props) {
         About Me
       </h3>
       <h3 className="absolute top-36  text-gray-500 text-xl">
-        Please note I'm still working on this website... just keep that in mind
+        Please note I am still working on this website... just keep that in mind
         while you rummage through and notice missing content :)
       </h3>
 
