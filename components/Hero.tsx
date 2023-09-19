@@ -41,7 +41,7 @@ export default function Hero({ pageInfo }: Props) {
             </div> */}
       <div className="z-20">
         {/* Job Role */}
-        <h2 className="text-md font-bold uppercase text-gray-500 pb-2 tracking-[15px]">
+        <h2 className="text-md uppercase text-gray-500 pb-2 tracking-[15px]">
           {pageInfo.role}
         </h2>
         {/* Typewriter */}
