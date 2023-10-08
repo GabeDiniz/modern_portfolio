@@ -58,7 +58,10 @@ export default function ExperienceCard({ experience }: Props) {
             .replace(regex, " ") + " - "}
           {experience.isCurrentlyWorkingHere
             ? "Present"
-            : new Date(experience.dateEnded).toDateString().slice(4)}
+            : new Date(experience.dateEnded)
+                .toDateString()
+                .slice(4)
+                .replace(regex, " ")}
         </p>
         <ul className="list-disc space-y-4 ml-5 text-xs md:text-sm lg:text-base short:text-xs">
           {experience.points.map((point, i) => (
