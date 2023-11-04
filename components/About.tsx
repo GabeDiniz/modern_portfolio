@@ -14,9 +14,9 @@ export default function About({ pageInfo }: Props) {
       whileInView={{ opacity: 1 }}
       transition={{ duration: 1.5 }}
       //  md:text-left md:flex-row
-      className="flex flex-col relative h-screen text-center max-w-7xl px-10 sm:justify-evenly mx-auto items-center"
+      className="flex flex-col relative h-screen text-center max-w-7xl px-10 mx-auto items-center"
     >
-      <h3 className="mt-20 text-sm sm:text-2xl uppercase tracking-[20px] text-gray-500 ">
+      <h3 className="mt-20 md:mt-24 xs:text-xl sm:text-2xl uppercase tracking-[20px] text-gray-500">
         About Me
       </h3>
       <h3 className="text-xs sm:text-2xl text-center text-gray-500">
@@ -25,8 +25,8 @@ export default function About({ pageInfo }: Props) {
       </h3>
 
       <motion.img
-        className="mt-5 md:mb-0 flex-shrink-0 object-cover
-        w-28 h-28 md:w-[350px] md:h-[350px] xl:w-[400px] xl:h-[400px] lg:rounded-3xl rounded-full"
+        className="mt-5 flex-shrink-0 object-cover
+        w-28 h-28 md:w-80 md:h-80 xl:w-[400px] xl:h-[400px] lg:rounded-3xl rounded-full"
         initial={{
           opacity: 0,
           x: -200,
@@ -43,10 +43,10 @@ export default function About({ pageInfo }: Props) {
       />
 
       <div className="space-y-5 sm:space-y-10 px-0 md:px-10">
-        <h4 className="mt-5 text-md sm:text-4xl font-semibold">
+        <h4 className="mt-5 text-md xs:text-2xl md:text-3xl font-semibold">
           Oh, hello there..
         </h4>
-        <p className="text-xs md:text-sm lg:text-lg">
+        <p className="text-xs xs:text-sm md:text-lg lg:text-lg">
           {pageInfo?.backgroundInformation}
         </p>
       </div>
