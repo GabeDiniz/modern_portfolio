@@ -13,19 +13,20 @@ export default function About({ pageInfo }: Props) {
       initial={{ opacity: 0 }}
       whileInView={{ opacity: 1 }}
       transition={{ duration: 1.5 }}
-      className="flex flex-col relative h-screen text-center md:text-left md:flex-row max-w-7xl px-10 justify-evenly mx-auto items-center"
+      //  md:text-left md:flex-row
+      className="flex flex-col relative h-screen text-center max-w-7xl px-10 sm:justify-evenly mx-auto items-center"
     >
-      <h3 className="absolute top-24 uppercase tracking-[20px] text-gray-500 text-2xl">
+      <h3 className="mt-20 text-sm sm:text-2xl uppercase tracking-[20px] text-gray-500 ">
         About Me
       </h3>
-      <h3 className="absolute top-36 mx-20 text-center text-gray-500 text-xl">
-        Please note I am still working on this website. Also note it is not
-        fully responsive, YET ;) ... just keep that in mind while you rummage
-        through and notice missing content :)
+      <h3 className="text-xs sm:text-2xl text-center text-gray-500">
+        Disclaimer: I am still working on this website so it is not fully
+        responsive, YET ;)
       </h3>
 
       <motion.img
-        className="-mb-20 md:mb-0 flex-shrink-0 w-56 h-56 lg:rounded-3xl rounded-full object-cover md:text-sm md:w-[350px] md:h-[350px] xl:w-[400px] xl:h-[400px]"
+        className="mt-5 md:mb-0 flex-shrink-0 object-cover
+        w-28 h-28 md:w-[350px] md:h-[350px] xl:w-[400px] xl:h-[400px] lg:rounded-3xl rounded-full"
         initial={{
           opacity: 0,
           x: -200,
@@ -41,9 +42,11 @@ export default function About({ pageInfo }: Props) {
         src={urlFor(pageInfo?.profilePic).url()}
       />
 
-      <div className="space-y-10 px-0 md:px-10">
-        <h4 className="text-4xl font-semibold">Oh, hello there..</h4>
-        <p className="lg:text-lg md:text-sm xs:text-sm">
+      <div className="space-y-5 sm:space-y-10 px-0 md:px-10">
+        <h4 className="mt-5 text-md sm:text-4xl font-semibold">
+          Oh, hello there..
+        </h4>
+        <p className="text-xs md:text-sm lg:text-lg">
           {pageInfo?.backgroundInformation}
         </p>
       </div>
