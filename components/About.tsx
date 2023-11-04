@@ -19,14 +19,14 @@ export default function About({ pageInfo }: Props) {
       <h3 className="mt-20 md:mt-24 xs:text-xl sm:text-2xl uppercase tracking-[20px] text-gray-500">
         About Me
       </h3>
-      <h3 className="text-xs sm:text-2xl text-center text-gray-500">
+      <h3 className="mt-4 text-xs sm:text-2xl text-center text-gray-500">
         Disclaimer: I am still working on this website so it is not fully
         responsive, YET ;)
       </h3>
 
       <motion.img
         className="mt-5 flex-shrink-0 object-cover
-        w-28 h-28 md:w-80 md:h-80 xl:w-[400px] xl:h-[400px] lg:rounded-3xl rounded-full"
+        w-28 h-28 md:w-72 md:h-72 xl:w-[350px] xl:h-[350px] rounded-full"
         initial={{
           opacity: 0,
           x: -200,
@@ -42,11 +42,11 @@ export default function About({ pageInfo }: Props) {
         src={urlFor(pageInfo?.profilePic).url()}
       />
 
-      <div className="space-y-5 sm:space-y-10 px-0 md:px-10">
+      <div className="space-y-5 sm:space-y-10 shorter:space-y-2 px-0 md:px-10">
         <h4 className="mt-5 text-md xs:text-2xl md:text-3xl font-semibold">
           Oh, hello there..
         </h4>
-        <p className="text-xs xs:text-sm md:text-lg lg:text-lg">
+        <p className="text-xs xs:text-sm sm:text-lg md:text-lg lg:text-lg">
           {pageInfo?.backgroundInformation}
         </p>
       </div>
