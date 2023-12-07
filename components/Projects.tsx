@@ -56,7 +56,7 @@ export default function Projects({ projects }: Props) {
       </a>
       <div
         className="relative grid grid-cols-2 short:gap-4 gap-8 px-10 overflow-x-scroll overflow-y-hidden
-                z-20 scrollbar-thin scrollbar-track-gray-400/20 scrollbar-thumb-highlight/80"
+          z-20 scrollbar-thin scrollbar-track-gray-400/20 scrollbar-thumb-highlight/80"
       >
         {projects?.map((project, i) => (
           // Each Project

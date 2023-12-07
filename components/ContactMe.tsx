@@ -25,7 +25,7 @@ export default function ContactMe({}) {
       whileInView={{ opacity: 1 }}
       transition={{ duration: 1.5 }}
       className="h-screen flex relative flex-col text-center md:text-left max-w-7xl px-10 
-                mx-auto items-center"
+        mx-auto items-center"
     >
       <h3 className="mt-24 short:mt-20 uppercase tracking-[20px] text-gray-500 text-2xl short:text-xl">
         Contact Me

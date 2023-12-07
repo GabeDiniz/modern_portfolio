@@ -15,7 +15,7 @@ export default function ExperienceCard({ experience }: Props) {
   return (
     <article
       className="flex flex-col relative rounded-lg items-center space-y-7 flex-shrink-0 w-[600px] md:w-[710px] 
-                    xl:w-[1100px] snap-center bg-bground p-10 hover:opacity-100 opacity-50 transition-opacity duration-200"
+        xl:w-[1100px] snap-center bg-bground p-10 hover:opacity-100 opacity-50 transition-opacity duration-200"
     >
       {/* Pink Overlay */}
       {/* <div className='w-full z-0 absolute bg-highlight/30 left-0 h-[150px] -skew-y-3'/> */}
