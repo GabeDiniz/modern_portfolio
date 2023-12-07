@@ -14,9 +14,9 @@ export default function About({ pageInfo }: Props) {
       whileInView={{ opacity: 1 }}
       transition={{ duration: 1.5 }}
       //  md:text-left md:flex-row
-      className="flex flex-col relative h-screen text-center max-w-7xl px-10 mx-auto items-center"
+      className="flex flex-col relative h-screen text-center max-w-xl md:max-w-7xl px-10 mx-auto items-center"
     >
-      <h3 className="mt-20 md:mt-24 xs:text-xl sm:text-2xl uppercase tracking-[20px] text-gray-500">
+      <h3 className="mt-28 md:mt-24 xs:text-xl sm:text-2xl uppercase tracking-[20px] text-gray-500">
         About Me
       </h3>
       <h3 className="mt-4 text-xs sm:text-2xl text-center text-gray-500">
@@ -26,7 +26,7 @@ export default function About({ pageInfo }: Props) {
 
       <motion.img
         className="mt-5 flex-shrink-0 object-cover
-        w-28 h-28 md:w-72 md:h-72 xl:w-[350px] xl:h-[350px] rounded-full"
+        w-36 h-36 md:w-64 md:h-64 xl:w-[350px] xl:h-[350px] rounded-full w-"
         initial={{
           opacity: 0,
           x: -200,
