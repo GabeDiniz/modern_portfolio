@@ -41,11 +41,11 @@ export default function Hero({ pageInfo }: Props) {
             </div> */}
       <div className="z-20">
         {/* Job Role */}
-        <h2 className="text-md uppercase text-gray-500 pb-2 tracking-[15px]">
+        <h2 className="text-sm sm:text-xl uppercase text-gray-500 pb-2 tracking-[8px] sm:tracking-[15px]">
           {pageInfo.role}
         </h2>
         {/* Typewriter */}
-        <h1 className="text-5xl lg:text-6xl font-semibold px-10">
+        <h1 className="text-2xl sm:text-5xl lg:text-6xl font-semibold px-10">
           <span className="mr-3">{text}</span>
           {/* Color has to be Hexcode */}
           <Cursor cursorColor="#d83f87" />
