@@ -24,7 +24,7 @@ function Skill({ skill }: Props) {
       {/* Media Queries: md:w-28 md:h-28 xl:w-28 xl:h-28 */}
       <div
         className="absolute opacity-0 group-hover:opacity-80 transition duration-500 ease-in-out
-        group-hover:bg-highlight/60 w-14 h-14 xs:w-14 xs:h-14 xl:w-24 xl:h-24 rounded-full z-0"
+        group-hover:bg-highlight/60 w-14 h-14 xs:w-20 xs:h-20 xl:w-24 xl:h-24 rounded-full z-0"
       >
         <div
           className="flex items-center justify-center h-full"
