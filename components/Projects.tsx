@@ -55,7 +55,7 @@ export default function Projects({ projects }: Props) {
         more projects
       </a>
       <div
-        className="relative grid grid-cols-1 sm:grid-cols-2 short:gap-4 gap-8 px-10 overflow-x-scroll overflow-y-hidden
+        className="relative grid grid-cols-1 sm:grid-cols-2 gap-4 short:gap-4 sm:gap-8 px-10 overflow-x-scroll overflow-y-hidden
           z-20 scrollbar-thin scrollbar-track-gray-400/20 scrollbar-thumb-highlight/80"
       >
         {projects?.map((project, i) => (
@@ -68,7 +68,7 @@ export default function Projects({ projects }: Props) {
           >
             <div
               key={i}
-              className="border border-transparent hover:glossyBG hover:text-highlight transition-all duration-200 rounded flex items-start p-3 py-5"
+              className="border border-transparent hover:glossyBG hover:text-highlight transition-all duration-300 hover:rounded-3xl flex items-start p-3 py-3 sm:py-5"
             >
               <motion.img
                 initial={{
@@ -93,10 +93,10 @@ export default function Projects({ projects }: Props) {
                   <br />
                   {/* <a className='text-lg underline decoration-highlight/50 hover:decoration-highlight/90 decoration-2' href={project.linkToBuild} target="_blank" rel="noopener noreferrer">Link to Build</a> */}
                 </h4>
-                <div className="flex space-x-2">
+                <div className="flex flex-wrap gap-y-1">
                   {project?.technologies.map((technology, i) => (
                     <img
-                      className="h-8 w-8 rounded-full"
+                      className="h-8 w-8 rounded-full mr-1 sm:mr-2"
                       key={i}
                       src={urlFor(technology.image).url()}
                     />
