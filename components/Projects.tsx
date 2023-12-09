@@ -11,7 +11,7 @@ export default function Projects({ projects }: Props) {
   const [viewSummary, setViewSummary] = useState(true);
 
   function checkSize() {
-    if (window.innerWidth < 990) {
+    if (window.innerWidth < 990 || window.innerHeight < 850) {
       setViewSummary(true);
     } else {
       setViewSummary(false);
@@ -55,7 +55,7 @@ export default function Projects({ projects }: Props) {
         more projects
       </a>
       <div
-        className="relative grid grid-cols-2 short:gap-4 gap-8 px-10 overflow-x-scroll overflow-y-hidden
+        className="relative grid grid-cols-1 sm:grid-cols-2 short:gap-4 gap-8 px-10 overflow-x-scroll overflow-y-hidden
           z-20 scrollbar-thin scrollbar-track-gray-400/20 scrollbar-thumb-highlight/80"
       >
         {projects?.map((project, i) => (
@@ -93,7 +93,7 @@ export default function Projects({ projects }: Props) {
                   <br />
                   {/* <a className='text-lg underline decoration-highlight/50 hover:decoration-highlight/90 decoration-2' href={project.linkToBuild} target="_blank" rel="noopener noreferrer">Link to Build</a> */}
                 </h4>
-                <div className="flex = space-x-2">
+                <div className="flex space-x-2">
                   {project?.technologies.map((technology, i) => (
                     <img
                       className="h-8 w-8 rounded-full"
@@ -105,7 +105,7 @@ export default function Projects({ projects }: Props) {
                 {viewSummary ? (
                   <></>
                 ) : (
-                  <p className="short:text-sm text-md text-center md:text-left text-white">
+                  <p className="text-sm short:text-lg md:text-left text-center text-white">
                     {project?.summary}
                   </p>
                 )}
