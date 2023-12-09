@@ -11,7 +11,7 @@ type Props = {
 };
 
 export default function Hero({ pageInfo }: Props) {
-  const [text, count] = useTypewriter({
+  const [text] = useTypewriter({
     words: [
       "Hello! My name is Gabe...",
       "import { Coffee } from 'Keurig'",
@@ -34,11 +34,6 @@ export default function Hero({ pageInfo }: Props) {
           alt=""
         />
       </div>
-      {/* TESTING */}
-      {/* <div className='relative h-64 w-64 max-w-full bg-cover overflow-hidden'>
-                <img className='asbolute inset-0 w-full h-full object-cover' src='blobW.png' alt=''/>
-                <img className='mix-blend-screen absolute inset-0 w-full h-full object-cover' src={urlFor(pageInfo.heroImage).url()} alt=''/>
-            </div> */}
       <div className="z-20">
         {/* Job Role */}
         <h2 className="text-sm sm:text-xl uppercase text-gray-500 pb-2 tracking-[8px] sm:tracking-[15px]">
