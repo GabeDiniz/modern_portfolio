@@ -26,7 +26,7 @@ export default function ContactMe({}) {
       transition={{ duration: 1.5 }}
       className="h-screen flex relative flex-col text-center items-center max-w-7xl px-10 mx-auto "
     >
-      <h3 className="mt-24 uppercase tracking-[20px] text-gray-500 text-xl sm:text-2xl short:text-xl">
+      <h3 className="mt-24 uppercase tracking-[20px] text-gray-500 text-lg sm:text-2xl short:text-xl">
         Contact Me
       </h3>
 
