@@ -41,17 +41,17 @@ export default function ContactMe({}) {
         <div className="text-md sm:text-2xl space-y-3 sm:space-y-8 short:space-y-4 ">
           <div className="flex items-center space-x-5 justify-center">
             <PhoneIcon className="text-highlight h-7 w-7 animate-pulse" />
-            <p className="">289-380-3053</p>
+            <p>289-380-3053</p>
           </div>
 
           <div className="flex items-center space-x-5 justify-center">
             <MapPinIcon className="text-highlight h-7 w-7 animate-pulse" />
-            <p className="">Kitchener/Waterloo</p>
+            <p>Kitchener/Waterloo</p>
           </div>
 
           <div className="flex items-center space-x-5 justify-center">
             <EnvelopeIcon className="text-highlight h-7 w-7 animate-pulse" />
-            <p className="">gabriel.sundiniz@gmail.com</p>
+            <p>gabriel.sundiniz@gmail.com</p>
           </div>
         </div>
 
