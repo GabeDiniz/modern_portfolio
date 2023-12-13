@@ -41,8 +41,8 @@ export default function ExperienceCard({ experience }: Props) {
 
   return (
     <article
-      className="flex flex-col relative rounded-lg items-center space-y-7 flex-shrink-0 w-[95%] md:w-[710px] 
-        xl:w-[1100px] snap-center bg-bground p-10 hover:opacity-100 opacity-50 transition-opacity duration-200"
+      className="flex flex-col relative rounded-lg items-center space-y-7 flex-shrink-0 w-[110%] xs:w-[95%] md:w-[710px] 
+        xl:w-[1100px] xs:snap-center bg-bground p-10 hover:opacity-100 opacity-50 transition-opacity duration-200"
     >
       {/* Pink Overlay */}
       {/* <div className='w-full z-0 absolute bg-highlight/30 left-0 h-[150px] -skew-y-3'/> */}
@@ -61,7 +61,7 @@ export default function ExperienceCard({ experience }: Props) {
         <h4 className="uppercase text-lg sm:text-2xl md:text-3xl short:text-xl font-light self-center text-center">
           {experience.jobTitle}
         </h4>
-        <p className="font-bold text-2xl short:text-xl mt-1 self-center">
+        <p className="font-bold text-xl sm:text-2xl short:text-xl mt-1 self-center">
           {experience.company}
         </p>
         <div className="flex flex-wrap space-x-2 my-2 self-center justify-center">
@@ -71,7 +71,7 @@ export default function ExperienceCard({ experience }: Props) {
               technology?.image && (
                 <img
                   key={index}
-                  className="h-10 w-10 short:h-6 short:w-6 rounded-full mb-2 sm:mb-0"
+                  className="h-6 w-6 sm:h-10 sm:w-10 short:h-6 short:w-6 rounded-full mb-1 sm:mb-0"
                   src={urlFor(technology?.image).url()}
                   alt=""
                 />
@@ -91,7 +91,7 @@ export default function ExperienceCard({ experience }: Props) {
                 .replace(regex, " ")}
         </p>
         {viewSummary ? (
-          <p>
+          <p className="text-sm">
             To view the job summary, please open this website on a larger device
             or zoom out...
           </p>
