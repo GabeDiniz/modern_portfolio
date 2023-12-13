@@ -16,7 +16,10 @@ export default function ExperienceCard({ experience }: Props) {
   const [viewSummary, setViewSummary] = useState(true);
 
   function checkSize() {
-    if (window.innerWidth < 700 || window.innerHeight < 870) {
+    if (
+      (window.innerWidth < 700 && window.innerHeight < 950) ||
+      (window.innerWidth > 700 && window.innerHeight < 970)
+    ) {
       setViewSummary(true);
     } else {
       setViewSummary(false);
@@ -38,7 +41,7 @@ export default function ExperienceCard({ experience }: Props) {
 
   return (
     <article
-      className="flex flex-col relative rounded-lg items-center space-y-7 flex-shrink-0 w-[600px] md:w-[710px] 
+      className="flex flex-col relative rounded-lg items-center space-y-7 flex-shrink-0 w-[95%] md:w-[710px] 
         xl:w-[1100px] snap-center bg-bground p-10 hover:opacity-100 opacity-50 transition-opacity duration-200"
     >
       {/* Pink Overlay */}
@@ -54,28 +57,28 @@ export default function ExperienceCard({ experience }: Props) {
         className="w-24 h-24 z-20 rounded-full xl:w-[100px] xl:h-[100px] object-cover object-center"
         src={urlFor(experience?.companyImage).url()}
       />
-      <div className="relative md:px-10 flex flex-col">
-        <h4 className="uppercase text-2xl md:text-3xl short:text-xl font-light self-center">
+      <div className="flex flex-col relative md:px-10 ">
+        <h4 className="uppercase text-lg sm:text-2xl md:text-3xl short:text-xl font-light self-center text-center">
           {experience.jobTitle}
         </h4>
         <p className="font-bold text-2xl short:text-xl mt-1 self-center">
           {experience.company}
         </p>
-        <div className="flex flex-wrap space-x-2 my-2 self-center">
+        <div className="flex flex-wrap space-x-2 my-2 self-center justify-center">
           {/* Tech Used */}
           {experience.technologies.map(
             (technology, index) =>
               technology?.image && (
                 <img
                   key={index}
-                  className="h-10 w-10 short:h-6 short:w-6 rounded-full"
+                  className="h-10 w-10 short:h-6 short:w-6 rounded-full mb-2 sm:mb-0"
                   src={urlFor(technology?.image).url()}
                   alt=""
                 />
               )
           )}
         </div>
-        <p className="uppercase py-5 text-gray-300">
+        <p className="uppercase py-5 text-gray-300 self-center">
           {new Date(experience.dateStarted)
             .toDateString()
             .slice(4)
@@ -88,7 +91,10 @@ export default function ExperienceCard({ experience }: Props) {
                 .replace(regex, " ")}
         </p>
         {viewSummary ? (
-          <></>
+          <p>
+            To view the job summary, please open this website on a larger device
+            or zoom out...
+          </p>
         ) : (
           <ul className="list-disc space-y-4 ml-5 text-xs md:text-sm lg:text-base short:text-xs">
             {experience.points.map((point, i) => (
