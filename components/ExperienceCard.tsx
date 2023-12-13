@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { Experience } from "../typings";
 import { urlFor } from "../lib/sanity";
@@ -12,6 +12,30 @@ type Props = {
 export default function ExperienceCard({ experience }: Props) {
   const regex = /( [0-9]{2} )/i;
   // console.log(new Date(experience.dateStarted).toDateString().slice(4).replace(regex, " "))
+
+  const [viewSummary, setViewSummary] = useState(true);
+
+  function checkSize() {
+    if (window.innerWidth < 700 || window.innerHeight < 870) {
+      setViewSummary(true);
+    } else {
+      setViewSummary(false);
+    }
+  }
+  useEffect(() => {
+    checkSize();
+    function handleResize() {
+      checkSize(); // Call checkSize to update viewSummary when the window is resized
+    }
+
+    window.addEventListener("resize", handleResize);
+
+    // Cleanup the event listener when the component is unmounted
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
+
   return (
     <article
       className="flex flex-col relative rounded-lg items-center space-y-7 flex-shrink-0 w-[600px] md:w-[710px] 
@@ -63,11 +87,15 @@ export default function ExperienceCard({ experience }: Props) {
                 .slice(4)
                 .replace(regex, " ")}
         </p>
-        <ul className="list-disc space-y-4 ml-5 text-xs md:text-sm lg:text-base short:text-xs">
-          {experience.points.map((point, i) => (
-            <li key={i}>{point}</li>
-          ))}
-        </ul>
+        {viewSummary ? (
+          <></>
+        ) : (
+          <ul className="list-disc space-y-4 ml-5 text-xs md:text-sm lg:text-base short:text-xs">
+            {experience.points.map((point, i) => (
+              <li key={i}>{point}</li>
+            ))}
+          </ul>
+        )}
       </div>
       {/* Pink Overlay */}
       {/* <div className='w-full absolute top-6 bg-highlight/10 left-0 h-[150px] -skew-y-3'/> */}
