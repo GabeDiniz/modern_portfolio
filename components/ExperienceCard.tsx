@@ -61,7 +61,7 @@ export default function ExperienceCard({ experience }: Props) {
         src={urlFor(experience?.companyImage).url()}
       />
       <div className="flex flex-col relative md:px-10 ">
-        <h4 className="uppercase text-lg sm:text-2xl md:text-3xl short:text-xl font-light self-center text-center">
+        <h4 className="uppercase text-lg sm:text-2xl md:text-3xl short:text-2xl font-light self-center text-center">
           {experience.jobTitle}
         </h4>
         <p className="font-bold text-xl sm:text-2xl short:text-xl mt-1 self-center">
@@ -99,7 +99,7 @@ export default function ExperienceCard({ experience }: Props) {
             or zoom out...
           </p>
         ) : (
-          <ul className="list-disc space-y-4 ml-5 text-xs md:text-sm lg:text-base short:text-xs">
+          <ul className="list-disc space-y-4 ml-5 text-xs md:text-sm lg:text-base short:text-md">
             {experience.points.map((point, i) => (
               <li key={i}>{point}</li>
             ))}
