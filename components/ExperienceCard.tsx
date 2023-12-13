@@ -16,9 +16,12 @@ export default function ExperienceCard({ experience }: Props) {
   const [viewSummary, setViewSummary] = useState(true);
 
   function checkSize() {
+    // 1024 x 800 = 8.192 (dont fit)
+    // 1440 x 900 = 12.96 (fit)
+    // 700 x 875 = 6.125 (fit)
     if (
-      (window.innerWidth < 700 && window.innerHeight < 950) ||
-      (window.innerWidth > 700 && window.innerHeight < 970)
+      (window.innerWidth < 600 && window.innerHeight < 1000) ||
+      window.innerHeight <= 800
     ) {
       setViewSummary(true);
     } else {
