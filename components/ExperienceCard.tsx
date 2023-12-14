@@ -81,7 +81,7 @@ export default function ExperienceCard({ experience }: Props) {
               )
           )}
         </div>
-        <p className="uppercase py-5 text-gray-300 self-center">
+        <p className="uppercase py-5 text-gray-300 self-center text-center sm:text-left">
           {new Date(experience.dateStarted)
             .toDateString()
             .slice(4)
@@ -94,7 +94,7 @@ export default function ExperienceCard({ experience }: Props) {
                 .replace(regex, " ")}
         </p>
         {viewSummary ? (
-          <p className="text-sm">
+          <p className="text-sm text-center">
             To view the job summary, please open this website on a larger device
             or zoom out...
           </p>
