@@ -61,7 +61,7 @@ export default function Header({ socials }: Props) {
             network="email"
             fgColor="white"
             bgColor="transparent"
-            className="cursor-pointer pl-16"
+            className="cursor-pointer pl-0 md:pl-16"
           />
           <p className="uppercase hidden md:inline-flex text-sm text-white md:mr-6">
             Get In Touch
