@@ -43,7 +43,7 @@ export default function Projects({ projects }: Props) {
       <h3 className="uppercase mb-2 tracking-[20px] text-gray-500 text-2xl mt-24">
         Projects
       </h3>
-      <h3 className="uppercase tracking-[3px] text-gray-500 text-sm">
+      <h3 className="uppercase tracking-[3px] text-gray-500 text-sm text-center px-10">
         Click on the card to view the build
       </h3>
       <a

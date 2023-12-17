@@ -16,12 +16,18 @@ export default {
       description: 'Progress of skill from 0 - 100',
     },
     {
+      name: 'type',
+      title: 'Type',
+      type: 'string',
+      description: 'Skill Type',
+    },
+    {
       name: 'image',
       title: 'Image',
       type: 'image',
       options: {
-        hotspot: true
-      }
-    }
-  ]
+        hotspot: true,
+      },
+    },
+  ],
 }
