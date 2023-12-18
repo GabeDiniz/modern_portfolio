@@ -26,7 +26,7 @@ function Skills({ skills }: Props) {
         Skills
       </h3>
       <h3 className="uppercase mb-6 2xl:mb-14 tracking-[3px] text-gray-500 text-sm px-5 md:px-0">
-        Hover over a skill to see what it is and my proficiency
+        Here are the skills I am proficient in
       </h3>
 
       <div className="grid grid-cols-4 md:grid-cols-5 gap-3 sm:gap-5 mt-10">
