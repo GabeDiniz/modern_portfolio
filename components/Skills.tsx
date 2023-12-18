@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Skill from "./Skill";
 import { Skill as SkillType } from "../typings";
 // import { Tooltip } from "@nextui-org/react"
@@ -8,11 +8,31 @@ type Props = {
   skills: SkillType[];
 };
 
+// Define sort order map
+const sortOrder: { [key: string]: number } = {
+  Language: 1,
+  Framework: 2,
+  Tool: 3,
+};
+
 function Skills({ skills }: Props) {
+  // Sorted Skills State
+  const [sortedSkills, setSortedSkills] = useState<SkillType[]>([]);
+
+  useEffect(() => {
+    // Sort the skills by type using the sortOrder map for predefined order
+    const sorted = [...skills].sort((a, b) => {
+      return (sortOrder[a.type] || 0) - (sortOrder[b.type] || 0);
+    });
+
+    setSortedSkills(sorted);
+  }, [skills]); // Dependency ensures this effect runs any time the skills prop changes
+
+  console.log(sortedSkills);
   // Sort Skills by proficiency
-  skills.sort((p1, p2) =>
-    p1.progress < p2.progress ? 1 : p1.progress > p2.progress ? -1 : 0
-  );
+  // skills.sort((p1, p2) =>
+  //   p1.progress < p2.progress ? 1 : p1.progress > p2.progress ? -1 : 0
+  // );
 
   return (
     <motion.div
