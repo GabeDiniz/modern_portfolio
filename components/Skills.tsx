@@ -21,6 +21,7 @@ function Skills({ skills }: Props) {
 
   useEffect(() => {
     // Sort the skills by type using the sortOrder map for predefined order
+    console.log(skills);
     const sorted = [...skills].sort((a, b) => {
       return (sortOrder[a.type] || 0) - (sortOrder[b.type] || 0);
     });
