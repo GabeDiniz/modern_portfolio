@@ -37,7 +37,7 @@ export interface Skill extends Sanitybody {
   image: Image;
   progress: number;
   title: string;
-  skill: string;
+  type: string;
 }
 
 export interface Experience extends Sanitybody {

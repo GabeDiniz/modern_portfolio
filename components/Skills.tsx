@@ -21,7 +21,7 @@ function Skills({ skills }: Props) {
 
   useEffect(() => {
     // Sort the skills by type using the sortOrder map for predefined order
-    console.log(skills);
+    // console.log(skills);
     const sorted = [...skills].sort((a, b) => {
       return (sortOrder[a.type] || 0) - (sortOrder[b.type] || 0);
     });
@@ -29,7 +29,7 @@ function Skills({ skills }: Props) {
     setSortedSkills(sorted);
   }, [skills]); // Dependency ensures this effect runs any time the skills prop changes
 
-  console.log(sortedSkills);
+  // console.log(sortedSkills);
   // Sort Skills by proficiency
   // skills.sort((p1, p2) =>
   //   p1.progress < p2.progress ? 1 : p1.progress > p2.progress ? -1 : 0
