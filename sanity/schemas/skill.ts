@@ -20,6 +20,13 @@ export default {
       title: 'Type',
       type: 'string',
       description: 'Skill Type',
+      options: {
+        list: [
+          {title: 'Language', value: 'language'},
+          {title: 'Tool', value: 'tool'},
+          {title: 'Framework', value: 'framework'},
+        ],
+      },
     },
     {
       name: 'image',
