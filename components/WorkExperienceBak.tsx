@@ -24,15 +24,14 @@ export default function WorkExperienceBak({ experiences }: Props) {
       <h3 className="uppercase mt-28 tracking-[20px] text-gray-500 text-2xl">
         Experience
       </h3>
-
-      {/* <div
+      <div
         className="w-full flex space-x-5 overflow-x-scroll p-10 short:p-2 short:mt-4 snap-x snap-mandatory scrollbar-thin 
           scrollbar-track-gray-400/20 scrollbar-thumb-highlight/80"
       >
         {experiences?.map((experience, index) => (
           <ExperienceCard key={index} experience={experience} />
         ))}
-      </div> */}
+      </div>
     </motion.div>
   );
 }
