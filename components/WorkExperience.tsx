@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { motion } from "framer-motion";
 import ExperienceCard from "./ExperienceCard";
 import { Experience } from "../typings";
@@ -9,8 +9,7 @@ type Props = {
 };
 
 export default function WorkExperienceBak({ experiences }: Props) {
-  // Debugging
-  // console.log(experiences);
+  const [accordionOpen, setAccordionOpen] = useState(false);
 
   return (
     <motion.div
@@ -25,6 +24,25 @@ export default function WorkExperienceBak({ experiences }: Props) {
         Experience
       </h3>
 
+      {/* Accodion */}
+      <div className="bg-white text-black w-full rounded-xl p-5">
+        <button
+          className="flex w-full justify-between"
+          onClick={() => setAccordionOpen(!accordionOpen)}
+        >
+          <span>This is the title</span>
+          {accordionOpen ? <span>-</span> : <span>+</span>}
+        </button>
+        <div
+          className={`grid overflow-hidden transition-all duration-500 ease-in-out ${
+            accordionOpen
+              ? "grid-rows[1fr] opacity-100"
+              : "grid-rows[0fr] opacity-0 h-0"
+          }`}
+        >
+          <div className="overflow-hidden">Answer here</div>
+        </div>
+      </div>
       {/* <div
         className="w-full flex space-x-5 overflow-x-scroll p-10 short:p-2 short:mt-4 snap-x snap-mandatory scrollbar-thin 
           scrollbar-track-gray-400/20 scrollbar-thumb-highlight/80"
