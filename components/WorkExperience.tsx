@@ -25,7 +25,7 @@ export default function WorkExperienceBak({ experiences }: Props) {
       </h3>
 
       {/* Accodion */}
-      <div className="bg-white text-black w-full rounded-xl p-5">
+      <div className="mt-5 bg-white text-black w-full rounded-xl py-4 px-5">
         <button
           className="flex w-full justify-between"
           onClick={() => setAccordionOpen(!accordionOpen)}
@@ -34,10 +34,8 @@ export default function WorkExperienceBak({ experiences }: Props) {
           {accordionOpen ? <span>-</span> : <span>+</span>}
         </button>
         <div
-          className={`grid overflow-hidden transition-all duration-500 ease-in-out ${
-            accordionOpen
-              ? "grid-rows[1fr] opacity-100"
-              : "grid-rows[0fr] opacity-0 h-0"
+          className={`grid overflow-hidden transition-all duration-700 ease-in-out ${
+            accordionOpen ? "opacity-100 max-h-52" : "opacity-0 max-h-0"
           }`}
         >
           <div className="overflow-hidden">Answer here</div>
