@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { motion } from "framer-motion";
 import ExperienceCard from "./ExperienceCard";
 import { Experience } from "../typings";
+import Accordion from "./Accordion";
 // import experience from '../sanity/schemas/experience'
 
 type Props = {
@@ -9,7 +10,10 @@ type Props = {
 };
 
 export default function WorkExperienceBak({ experiences }: Props) {
-  const [accordionOpen, setAccordionOpen] = useState(false);
+  const [openAccordion, setOpenAccordion] = useState<number | null>(null);
+  const handleAccordionClick = (index: number) => {
+    setOpenAccordion(openAccordion === index ? null : index);
+  };
 
   return (
     <motion.div
@@ -25,30 +29,20 @@ export default function WorkExperienceBak({ experiences }: Props) {
       </h3>
 
       {/* Accodion */}
-      <div className="mt-5 bg-white text-black w-full rounded-xl py-4 px-5">
-        <button
-          className="flex w-full justify-between"
-          onClick={() => setAccordionOpen(!accordionOpen)}
-        >
-          <span>This is the title</span>
-          {accordionOpen ? <span>-</span> : <span>+</span>}
-        </button>
-        <div
-          className={`grid overflow-hidden transition-all duration-700 ease-in-out ${
-            accordionOpen ? "opacity-100 max-h-52" : "opacity-0 max-h-0"
-          }`}
-        >
-          <div className="overflow-hidden">Answer here</div>
-        </div>
-      </div>
-      {/* <div
-        className="w-full flex space-x-5 overflow-x-scroll p-10 short:p-2 short:mt-4 snap-x snap-mandatory scrollbar-thin 
-          scrollbar-track-gray-400/20 scrollbar-thumb-highlight/80"
-      >
+      <div className="">
         {experiences?.map((experience, index) => (
-          <ExperienceCard key={index} experience={experience} />
+          <Accordion
+            key={index}
+            title={`Accordion ${index + 1}`}
+            isOpen={openAccordion === index}
+            onClick={() => handleAccordionClick(index)}
+          >
+            <div className="overflow-hidden">
+              Content for Accordion {index + 1}
+            </div>
+          </Accordion>
         ))}
-      </div> */}
+      </div>
     </motion.div>
   );
 }
