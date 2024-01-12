@@ -1,10 +1,12 @@
 import React from "react";
+import { Experience } from "../typings";
 
 interface AccordionProps {
   title: string;
   isOpen: boolean;
   onClick: () => void;
   children: any;
+  experience: Experience;
 }
 
 const Accordion: React.FC<AccordionProps> = ({
@@ -12,6 +14,7 @@ const Accordion: React.FC<AccordionProps> = ({
   isOpen,
   onClick,
   children,
+  experience,
 }) => {
   return (
     <div className="bg-white text-black w-full rounded-xl py-4 px-5 mb-2">
@@ -21,7 +24,7 @@ const Accordion: React.FC<AccordionProps> = ({
       </button>
       {isOpen && (
         <div className="transition-all duration-500 ease-in-out">
-          {children}
+          {experience.jobTitle}
         </div>
       )}
     </div>

@@ -36,6 +36,7 @@ export default function WorkExperienceBak({ experiences }: Props) {
             title={`Accordion ${index + 1}`}
             isOpen={openAccordion === index}
             onClick={() => handleAccordionClick(index)}
+            experience={experience}
           >
             <div className="overflow-hidden">
               Content for Accordion {index + 1}
@@ -43,6 +44,10 @@ export default function WorkExperienceBak({ experiences }: Props) {
           </Accordion>
         ))}
       </div>
+
+      {/* {experiences?.map((experience, index) => (
+          <ExperienceCard key={index} experience={experience} />
+        ))} */}
     </motion.div>
   );
 }
