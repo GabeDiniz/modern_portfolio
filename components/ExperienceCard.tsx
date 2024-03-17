@@ -44,8 +44,8 @@ export default function ExperienceCard({ experience }: Props) {
 
   return (
     <article
-      className="flex flex-col relative rounded-lg items-center space-y-7 flex-shrink-0 w-[110%] xs:w-[95%] md:w-[710px] 
-        xl:w-[1100px] xs:snap-center bg-bground p-10 hover:opacity-100 opacity-50 transition-opacity duration-200"
+      className="flex flex-col relative rounded-lg items-center space-y-7 flex-shrink-0 w-full xs:w-[95%] md:w-[710px] 
+        xl:w-[1100px] xs:snap-center bg-bground_dark p-10 hover:opacity-100 opacity-50 transition-opacity duration-200"
     >
       {/* Pink Overlay */}
       {/* <div className='w-full z-0 absolute bg-highlight/30 left-0 h-[150px] -skew-y-3'/> */}
@@ -57,14 +57,14 @@ export default function ExperienceCard({ experience }: Props) {
         transition={{ duration: 1.2 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
-        className="w-24 h-24 z-20 rounded-full xl:w-[100px] xl:h-[100px] object-cover object-center"
+        className="w-20 h-20 xl:w-[100px] xl:h-[100px] z-20 rounded-full object-cover object-center"
         src={urlFor(experience?.companyImage).url()}
       />
       <div className="flex flex-col relative md:px-10 ">
-        <h4 className="uppercase text-lg sm:text-2xl md:text-3xl short:text-2xl font-light self-center text-center">
+        <h4 className="uppercase text-base xs:text-lg sm:text-2xl md:text-3xl short:text-2xl font-light self-center text-center">
           {experience.jobTitle}
         </h4>
-        <p className="font-bold text-xl sm:text-2xl short:text-xl mt-1 self-center">
+        <p className="font-bold text-base xs:text-lg sm:text-2xl short:text-xl mt-1 self-center">
           {experience.company}
         </p>
         <div className="flex flex-wrap space-x-2 my-2 self-center justify-center">
@@ -99,7 +99,7 @@ export default function ExperienceCard({ experience }: Props) {
             or zoom out...
           </p>
         ) : (
-          <ul className="list-disc space-y-4 ml-5 text-xs md:text-sm lg:text-base short:text-md">
+          <ul className="list-disc space-y-4 ml-5 text-xs md:text-sm xl:text-base">
             {experience.points.map((point, i) => (
               <li key={i}>{point}</li>
             ))}
