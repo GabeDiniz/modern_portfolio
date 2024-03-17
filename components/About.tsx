@@ -13,21 +13,19 @@ export default function About({ pageInfo }: Props) {
       initial={{ opacity: 0 }}
       whileInView={{ opacity: 1 }}
       transition={{ duration: 1.5 }}
-      //  md:text-left md:flex-row
-      className="flex flex-col mx-auto items-center relative h-screen text-center max-w-xl md:max-w-7xl px-10 "
+      className="flex flex-col mx-auto items-center h-screen text-center max-w-xl md:max-w-7xl px-10 space-y-6"
     >
-      <h3 className="mt-28 md:mt-24 xs:text-xl sm:text-2xl uppercase tracking-[20px] text-gray-500">
+      <h3 className="mt-28 md:mt-24 text-2xl uppercase tracking-[20px] text-gray-500">
         About Me
       </h3>
-      <h3 className="mt-4 text-xs sm:text-2xl text-center text-gray-500">
+      <h3 className="text-xs md:text-lg text-center text-gray-500">
         Disclaimer: I am still working on this website so it is not fully
         responsive, YET ;)
       </h3>
 
-      <div className="flex flex-col shorter:flex-row mx-auto shorter:m-20 items-center">
+      <div className="flex flex-col mx-auto items-center">
         <motion.img
-          className="mt-5 flex-shrink-0 object-cover w-36 h-36 md:w-64 md:h-64 
-            xl:w-[350px] xl:h-[350px] shorter:w-64 shorter:h-64 rounded-full"
+          className="flex-shrink-0 object-cover w-32 h-32 md:w-56 md:h-56 xl:w-[350px] xl:h-[350px] rounded-full"
           initial={{
             opacity: 0,
             x: -200,
@@ -43,11 +41,11 @@ export default function About({ pageInfo }: Props) {
           src={urlFor(pageInfo?.profilePic).url()}
         />
 
-        <div className="space-y-5 sm:space-y-10 shorter:space-y-2 px-0 md:px-10 shorter:text-left">
+        <div className="space-y-5 sm:space-y-4 px-0 md:px-10">
           <h4 className="mt-5 text-md xs:text-2xl md:text-3xl font-semibold">
             Oh, hello there..
           </h4>
-          <p className="text-xs xs:text-sm sm:text-lg md:text-lg lg:text-lg shorter:text-base">
+          <p className="text-xs xs:text-sm sm:text-lg md:text-lg lg:text-lg overflow-hidden">
             {pageInfo?.backgroundInformation}
           </p>
         </div>
