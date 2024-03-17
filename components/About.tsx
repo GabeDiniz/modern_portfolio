@@ -23,9 +23,9 @@ export default function About({ pageInfo }: Props) {
         responsive, YET ;)
       </h3>
 
-      <div className="flex flex-col mx-auto items-center">
+      <div className="flex flex-col xl:flex-row xl: xl:translate-y-1/4 mx-auto items-center">
         <motion.img
-          className="flex-shrink-0 object-cover w-32 h-32 md:w-56 md:h-56 xl:w-[350px] xl:h-[350px] rounded-full"
+          className="object-cover w-32 h-32 md:w-56 md:h-56 xl:w-[350px] xl:h-[350px] rounded-full"
           initial={{
             opacity: 0,
             x: -200,
@@ -41,11 +41,11 @@ export default function About({ pageInfo }: Props) {
           src={urlFor(pageInfo?.profilePic).url()}
         />
 
-        <div className="space-y-5 sm:space-y-4 px-0 md:px-10">
-          <h4 className="mt-5 text-md xs:text-2xl md:text-3xl font-semibold">
+        <div className="space-y-5 sm:space-y-4 px-0 md:px-10 xl:flex xl:flex-col xl:items-start">
+          <h4 className="mt-5 xl:mt-0 text-md xs:text-2xl md:text-3xl font-semibold">
             Oh, hello there..
           </h4>
-          <p className="text-xs xs:text-sm sm:text-lg md:text-lg lg:text-lg overflow-hidden">
+          <p className="text-xs xs:text-sm sm:text-lg md:text-lg lg:text-lg overflow-hidden xl:text-left">
             {pageInfo?.backgroundInformation}
           </p>
         </div>

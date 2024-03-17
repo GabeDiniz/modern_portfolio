@@ -18,8 +18,8 @@ module.exports = {
 
       "2xl": "1536px",
 
-      shorter: { raw: "(min-height: 690px)" },
-      short: { raw: "(min-height: 850px)" },
+      shorter: { raw: "(max-height: 690px)" },
+      short: { raw: "(max-height: 850px)" },
     },
     extend: {
       backgroundImage: {
