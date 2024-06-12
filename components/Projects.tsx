@@ -37,8 +37,7 @@ export default function Projects({ projects }: Props) {
       initial={{ opacity: 0 }}
       whileInView={{ opacity: 1 }}
       transition={{ duration: 1.5 }}
-      className="h-screen flex relative flex-col text-left max-w-full
-                mx-auto items-center z-0"
+      className="flex relative flex-col text-left max-w-full mx-auto items-center z-0 py-20"
     >
       <h3 className="uppercase mb-2 tracking-[20px] text-gray-500 text-2xl mt-24">
         Projects

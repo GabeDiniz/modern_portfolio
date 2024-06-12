@@ -13,7 +13,7 @@ export default function About({ pageInfo }: Props) {
       initial={{ opacity: 0 }}
       whileInView={{ opacity: 1 }}
       transition={{ duration: 1.5 }}
-      className="flex flex-col mx-auto items-center h-screen text-center max-w-xl md:max-w-7xl px-10 space-y-6"
+      className="flex flex-col mx-auto items-center text-center max-w-xl md:max-w-7xl px-10 space-y-6"
     >
       <h3 className="mt-28 md:mt-24 text-2xl uppercase tracking-[20px] text-gray-500">
         About Me
