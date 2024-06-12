@@ -27,7 +27,7 @@ export default function ContactMe({}) {
       className="flex relative flex-col text-center items-center max-w-7xl px-10 pb-28 mx-auto "
     >
       <h3 className="mt-10 uppercase tracking-[10px] text-gray-500 text-lg sm:text-2xl short:text-xl">
-        {"<"}Contact Me{" />"}
+        {"<"}Contact Me{"/>"}
       </h3>
 
       <div className="mt-6 sm:mt-10 short:mt-6 flex flex-col space-y-10">

@@ -21,7 +21,7 @@ export default function WorkExperience({ experiences }: Props) {
     >
       {/* absolute xl:top-24 md:top-20 */}
       <h3 className="uppercase sm:mt-28 md:mt-24 tracking-[10px] text-gray-500 text-2xl">
-        {"<"}Experience{" />"}
+        {"<"}Experience{"/>"}
       </h3>
       <div className="w-full flex space-x-5 overflow-x-scroll p-4 snap-x snap-mandatory scrollbar-thin scrollbar-track-gray-400/20 scrollbar-thumb-highlight/80">
         {experiences?.map((experience, index) => (

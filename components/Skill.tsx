@@ -13,7 +13,7 @@ function Skill({ skill }: Props) {
     <div className="group relative flex">
       <motion.img
         initial={{
-          x: 200,
+          x: 100,
           opacity: 0,
         }}
         transition={{ duration: 1 }}
