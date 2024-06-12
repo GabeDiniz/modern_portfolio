@@ -15,8 +15,8 @@ export default function About({ pageInfo }: Props) {
       transition={{ duration: 1.5 }}
       className="flex flex-col mx-auto items-center text-center max-w-xl md:max-w-7xl px-10 space-y-6"
     >
-      <h3 className="mt-28 md:mt-24 text-2xl uppercase tracking-[20px] text-gray-500">
-        About Me
+      <h3 className="mt-28 md:mt-24 text-2xl uppercase tracking-[10px] text-gray-500">
+        {"<"}About Me{" />"}
       </h3>
       <h3 className="text-xs md:text-lg text-center text-gray-500">
         Disclaimer: I am still working on this website so it is not fully

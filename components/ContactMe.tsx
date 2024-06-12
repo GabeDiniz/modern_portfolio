@@ -24,10 +24,10 @@ export default function ContactMe({}) {
       initial={{ opacity: 0 }}
       whileInView={{ opacity: 1 }}
       transition={{ duration: 1.5 }}
-      className="h-screen flex relative flex-col text-center items-center max-w-7xl px-10 mx-auto "
+      className="flex relative flex-col text-center items-center max-w-7xl px-10 pb-28 mx-auto "
     >
-      <h3 className="mt-24 uppercase tracking-[20px] text-gray-500 text-lg sm:text-2xl short:text-xl">
-        Contact Me
+      <h3 className="mt-10 uppercase tracking-[10px] text-gray-500 text-lg sm:text-2xl short:text-xl">
+        {"<"}Contact Me{" />"}
       </h3>
 
       <div className="mt-6 sm:mt-10 short:mt-6 flex flex-col space-y-10">

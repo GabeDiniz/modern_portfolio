@@ -39,8 +39,8 @@ export default function Projects({ projects }: Props) {
       transition={{ duration: 1.5 }}
       className="flex relative flex-col text-left max-w-full mx-auto items-center z-0 py-20"
     >
-      <h3 className="uppercase mb-2 tracking-[20px] text-gray-500 text-2xl mt-24">
-        Projects
+      <h3 className="uppercase mb-2 tracking-[10px] text-gray-500 text-2xl mt-24">
+        {"<"}Projects{" />"}
       </h3>
       <h3 className="uppercase tracking-[3px] text-gray-500 text-sm text-center px-10">
         Click on the card to view the build

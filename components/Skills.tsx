@@ -42,8 +42,8 @@ function Skills({ skills }: Props) {
       transition={{ duration: 1.5 }}
       className="flex flex-col text-center md:text-left max-w-[2000px] xl:px-10 mx-auto items-center"
     >
-      <h3 className="uppercase mb-2 tracking-[20px] text-gray-500 text-2xl">
-        Skills
+      <h3 className="uppercase mb-2 tracking-[10px] text-gray-500 text-2xl">
+        {"<"}Skills{" />"}
       </h3>
       <h3 className="uppercase mb-6 2xl:mb-14 tracking-[3px] text-gray-500 text-sm px-5 md:px-0">
         Here are the skills I am proficient in
