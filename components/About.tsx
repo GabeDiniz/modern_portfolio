@@ -13,9 +13,9 @@ export default function About({ pageInfo }: Props) {
       initial={{ opacity: 0 }}
       whileInView={{ opacity: 1 }}
       transition={{ duration: 1.5 }}
-      className="flex flex-col mx-auto items-center text-center max-w-xl md:max-w-7xl px-10 space-y-6"
+      className="flex flex-col mx-auto items-center text-center max-w-xl md:max-w-7xl px-10 py-20 space-y-8"
     >
-      <h3 className="mt-28 md:mt-24 text-2xl uppercase tracking-[10px] text-gray-500">
+      <h3 className="text-2xl uppercase tracking-[10px] text-gray-500">
         {"<"}About Me{"/>"}
       </h3>
       <h3 className="text-xs md:text-lg text-center text-gray-500">
@@ -23,7 +23,7 @@ export default function About({ pageInfo }: Props) {
         responsive, YET ;)
       </h3>
 
-      <div className="flex flex-col xl:flex-row xl: xl:translate-y-1/4 mx-auto items-center">
+      <div className="flex flex-col xl:flex-row mx-auto items-center">
         <motion.img
           className="object-cover w-32 h-32 md:w-56 md:h-56 xl:w-[350px] xl:h-[350px] rounded-full"
           initial={{
