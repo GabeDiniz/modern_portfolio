@@ -8,7 +8,7 @@ type Props = {
   // directionLeft?: boolean;
 };
 
-function Skill({ skill }: Props) {
+function EachSkill({ skill }: Props) {
   return (
     <div className="group relative flex">
       <motion.img
@@ -39,4 +39,4 @@ function Skill({ skill }: Props) {
   );
 }
 
-export default Skill;
+export default EachSkill;
