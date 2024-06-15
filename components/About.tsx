@@ -13,14 +13,10 @@ export default function About({ pageInfo }: Props) {
       initial={{ opacity: 0 }}
       whileInView={{ opacity: 1 }}
       transition={{ duration: 1.5 }}
-      className="flex flex-col mx-auto items-center text-center max-w-xl md:max-w-7xl px-10 py-20 space-y-8"
+      className="flex flex-col mx-auto items-center text-center max-w-xl md:max-w-7xl px-10 py-20 space-y-8 xl:space-y-14"
     >
       <h3 className="text-2xl uppercase tracking-[10px] text-gray-500">
         {"<"}About Me{"/>"}
-      </h3>
-      <h3 className="text-xs md:text-lg text-center text-gray-500">
-        Disclaimer: I am still working on this website so it is not fully
-        responsive, YET ;)
       </h3>
 
       <div className="flex flex-col xl:flex-row mx-auto items-center">
