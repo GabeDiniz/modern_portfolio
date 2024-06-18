@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import React, { useEffect, useState } from "react";
-import Skill from "./Skill";
+import EachSkill from "./EachSkill";
 import { Skill as SkillType } from "../typings";
 // import { Tooltip } from "@nextui-org/react"
 
@@ -51,7 +51,7 @@ function Skills({ skills }: Props) {
 
       <div className="grid grid-cols-4 md:grid-cols-5 gap-3 sm:gap-5 mt-10">
         {skills?.map((skill, i) => (
-          <Skill key={i} skill={skill} />
+          <EachSkill key={i} skill={skill} />
         ))}
       </div>
     </motion.div>
