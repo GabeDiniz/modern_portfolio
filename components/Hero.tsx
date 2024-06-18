@@ -22,16 +22,13 @@ export default function Hero({ pageInfo }: Props) {
   });
 
   return (
-    <div className="h-screen flex flex-col space-y-8 items-center justify-center text-center overflow-hidden">
-      <div className="relative">
+    <div className="h-screen w-full flex flex-col space-y-8 items-center justify-center text-center overflow-hidden">
+      <div className="relative flex justify-center items-center">
         <BackgroundCircles />
-      </div>
-      {/* WORKING */}
-      <div className="relative h-64 w-64 max-w-full rounded-full border-2 border-neutral/50 shadow-2xl overflow-hidden animatecss animatecss-backInUp animatecss-delay-2s">
         <img
-          className="absolute inset-0 w-full h-full object-cover"
+          className="h-64 w-64 object-cover rounded-full border-2 border-neutral/50 animatecss animatecss-backInUp animatecss-delay-2s"
           src={urlFor(pageInfo.heroImage).url()}
-          alt=""
+          alt="profile-picture"
         />
       </div>
       <div className="z-20">
