@@ -1,4 +1,4 @@
-// import Image from 'next/image';
+/* eslint-disable @next/next/no-img-element */
 import Link from "next/link";
 import React from "react";
 import { Cursor, useTypewriter } from "react-simple-typewriter";
@@ -29,7 +29,7 @@ export default function Hero({ pageInfo }: Props) {
       {/* WORKING */}
       <div className="relative h-64 w-64 max-w-full rounded-full border-2 border-neutral/50 shadow-2xl overflow-hidden animatecss animatecss-backInUp animatecss-delay-2s">
         <img
-          className="absolute inset-0 w-full h-full object-cover "
+          className="absolute inset-0 w-full h-full object-cover"
           src={urlFor(pageInfo.heroImage).url()}
           alt=""
         />
