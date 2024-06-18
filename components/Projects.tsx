@@ -49,14 +49,11 @@ export default function Projects({ projects }: Props) {
         href="https://github.com/GabeDiniz?tab=repositories"
         target="_blank"
         rel="noopener noreferrer"
-        className="uppercase underline cursor-pointer mt-3 mb-6 2xl:mb-14 tracking-[3px] text-gray-400 text-sm"
+        className="uppercase underline hover:cursor-pointer mt-3 mb-6 2xl:mb-14 tracking-[3px] text-gray-400 text-sm"
       >
         more projects
       </a>
-      <div
-        className="relative grid grid-cols-1 sm:grid-cols-2 gap-4 short:gap-4 sm:gap-8 px-10 overflow-x-scroll overflow-y-hidden
-          z-20 scrollbar-thin scrollbar-track-gray-400/20 scrollbar-thumb-highlight/80"
-      >
+      <div className="relative grid grid-cols-1 sm:grid-cols-2 gap-4 max-w-7xl short:gap-4 sm:gap-8 z-20">
         {projects?.map((project, i) => (
           // Each Project
           <a
