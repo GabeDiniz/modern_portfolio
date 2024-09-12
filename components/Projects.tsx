@@ -31,7 +31,7 @@ export default function Projects({ projects }: Props) {
       window.removeEventListener("resize", handleResize);
     };
   }, []);
-
+  console.log(projects);
   return (
     <motion.div
       initial={{ opacity: 0 }}
@@ -90,13 +90,16 @@ export default function Projects({ projects }: Props) {
                   {/* <a className='text-lg underline decoration-highlight/50 hover:decoration-highlight/90 decoration-2' href={project.linkToBuild} target="_blank" rel="noopener noreferrer">Link to Build</a> */}
                 </h4>
                 <div className="flex flex-wrap gap-y-1">
-                  {project?.technologies.map((technology, i) => (
-                    <img
-                      className="h-8 w-8 rounded-full mr-1 sm:mr-2"
-                      key={i}
-                      src={urlFor(technology.image).url()}
-                    />
-                  ))}
+                  {project?.technologies.map(
+                    (technology, i) =>
+                      technology?.image && ( // Check if the image exists
+                        <img
+                          className="h-8 w-8 rounded-full mr-1 sm:mr-2"
+                          key={i}
+                          src={urlFor(technology?.image)?.url()}
+                        />
+                      )
+                  )}
                 </div>
                 {viewSummary ? (
                   <></>
