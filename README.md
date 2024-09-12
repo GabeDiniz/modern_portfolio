@@ -1,5 +1,5 @@
 # 🧾 Fullstack Portfolio Website
-This is a [Next.js](https://nextjs.org/) personal portfolio bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+This is a [`Next.js`](https://nextjs.org/) personal portfolio bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app). I try to update this as frequently as possible, hope you like it! 
 
 ## 🔗 Link to build below
 [BUILD](https://gabediniz.com/) using Vercel
