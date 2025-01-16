@@ -46,10 +46,10 @@ export default function Projects({ projects }: Props) {
         Click on the card to view the build
       </h3>
       <a
-        href="https://github.com/GabeDiniz?tab=repositories"
+        href="https://github.com/GabeDiniz"
         target="_blank"
         rel="noopener noreferrer"
-        className="uppercase underline hover:cursor-pointer mt-3 mb-6 2xl:mb-14 tracking-[3px] text-gray-400 text-sm"
+        className="uppercase underline hover:cursor-pointer mt-3 mb-6 2xl:mb-14 tracking-[3px] text-gray-400 text-sm z-20"
       >
         more projects
       </a>
