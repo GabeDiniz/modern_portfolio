@@ -31,7 +31,7 @@ export default function Projects({ projects }: Props) {
       window.removeEventListener("resize", handleResize);
     };
   }, []);
-
+  console.log(projects);
   return (
     <motion.div
       initial={{ opacity: 0 }}
