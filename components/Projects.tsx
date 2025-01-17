@@ -37,19 +37,19 @@ export default function Projects({ projects }: Props) {
       initial={{ opacity: 0 }}
       whileInView={{ opacity: 1 }}
       transition={{ duration: 1.5 }}
-      className="flex relative flex-col text-left max-w-full mx-auto items-center z-0 py-20"
+      className="flex relative flex-col text-left max-w-full mx-auto items-center z-0"
     >
-      <h3 className="uppercase mb-2 tracking-[10px] text-gray-500 text-2xl mt-24">
+      <h3 className="uppercase mb-2 tracking-[10px] text-gray-500 text-2xl mt-28 md:mt-24">
         {"<"}Projects{"/>"}
       </h3>
       <h3 className="uppercase tracking-[3px] text-gray-500 text-sm text-center px-10">
         Click on the card to view the build
       </h3>
       <a
-        href="https://github.com/GabeDiniz?tab=repositories"
+        href="https://github.com/GabeDiniz"
         target="_blank"
         rel="noopener noreferrer"
-        className="uppercase underline hover:cursor-pointer mt-3 mb-6 2xl:mb-14 tracking-[3px] text-gray-400 text-sm"
+        className="uppercase underline hover:cursor-pointer mt-3 mb-6 2xl:mb-14 tracking-[3px] text-gray-400 text-sm z-20"
       >
         more projects
       </a>
@@ -90,15 +90,15 @@ export default function Projects({ projects }: Props) {
                   {/* <a className='text-lg underline decoration-highlight/50 hover:decoration-highlight/90 decoration-2' href={project.linkToBuild} target="_blank" rel="noopener noreferrer">Link to Build</a> */}
                 </h4>
                 <div className="flex flex-wrap gap-y-1">
-                  {project?.technologies.map(
-                    (technology, i) =>
-                      technology?.image && ( // Check if the image exists
-                        <img
-                          className="h-8 w-8 rounded-full mr-1 sm:mr-2"
-                          key={i}
-                          src={urlFor(technology?.image)?.url()}
-                        />
-                      )
+                  {project?.technologies.map((technology, i) =>
+                    technology?.image ? ( // Ensure technology and technology.image are defined
+                      <img
+                        className="h-8 w-8 rounded-full mr-1 sm:mr-2"
+                        key={i}
+                        src={urlFor(technology.image)?.url() || ""} // Fallback to an empty string if urlFor fails
+                        alt={`Technology ${i}`}
+                      />
+                    ) : null
                   )}
                 </div>
                 {viewSummary ? (
