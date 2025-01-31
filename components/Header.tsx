@@ -11,7 +11,7 @@ type Props = {
 export default function Header({ socials }: Props) {
   return (
     // Old spacing: max-w-7xl
-    <header className="sticky top-0 p-5 flex items-start justify-between mx-12 z-20 xl:items-center">
+    <header className="sticky top-0 p-5 flex items-start justify-between mx-12 z-[10] xl:items-center">
       <motion.div
         initial={{
           x: -500,

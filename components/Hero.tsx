@@ -22,7 +22,7 @@ export default function Hero({ pageInfo }: Props) {
   });
 
   return (
-    <div className="h-screen w-full flex flex-col space-y-8 items-center justify-center text-center overflow-hidden">
+    <div className="bg-slate-200 h-screen w-full flex flex-col space-y-8 items-center justify-center text-center overflow-hidden">
       <div className="relative flex justify-center items-center -mt-6 lg:mt-5">
         <BackgroundCircles />
         <img
