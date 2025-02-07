@@ -50,9 +50,9 @@ export default function Hero({ pageInfo }: Props) {
           <Link href="#experience" className="px-1">
             <button className="heroButton">Experience</button>
           </Link>
-          <Link href="#skills" className="px-1">
+          {/* <Link href="#skills" className="px-1">
             <button className="heroButton">Skills</button>
-          </Link>
+          </Link> */}
           <Link href="#projects" className="px-1">
             <button className="heroButton">Projects</button>
           </Link>
