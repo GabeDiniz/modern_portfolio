@@ -42,7 +42,7 @@ const Home = ({ pageInfo, experiences, skills, projects, socials }: Props) => {
 
       {/* HERO */}
       {/* Potentially remove  */}
-      <section id="hero" className="">
+      <section id="hero" className="relative">
         <Hero pageInfo={pageInfo} />
       </section>
 
