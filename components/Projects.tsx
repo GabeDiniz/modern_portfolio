@@ -77,7 +77,7 @@ export default function Projects({ projects }: Props) {
                 viewport={{ once: true }}
                 src={urlFor(project?.image).url()}
                 alt="Project-Image"
-                className="w-[5rem] h-auto bg-cover mr-4"
+                className="w-[5rem] h-auto bg-cover mr-4 rounded-lg"
               />
               <div className="max-w-6xl space-y-3">
                 {/* Project Title */}
