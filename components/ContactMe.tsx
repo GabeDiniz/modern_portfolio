@@ -55,7 +55,7 @@ export default function ContactMe({}) {
           </div>
         </div>
 
-        <form
+        {/* <form
           onSubmit={handleSubmit(onSubmit)}
           className="flex flex-col space-y-2 mx-auto w-fit"
         >
@@ -93,7 +93,7 @@ export default function ContactMe({}) {
             <div className="absolute inset-0 w-0 bg-highlight transition-all duration-[300ms] ease-in group-hover:w-full"></div>
             <span className="relative">Send</span>
           </button>
-        </form>
+        </form> */}
       </div>
     </motion.div>
   );
