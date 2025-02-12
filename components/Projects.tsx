@@ -36,7 +36,7 @@ export default function Projects({ projects }: Props) {
     <motion.div
       initial={{ opacity: 0 }}
       whileInView={{ opacity: 1 }}
-      transition={{ duration: 1.5 }}
+      transition={{ duration: 3 }}
       className="flex relative flex-col text-left max-w-full mx-auto items-center z-0"
     >
       <h3 className="uppercase mb-2 tracking-[10px] text-gray-500 text-2xl mt-28 md:mt-24">
