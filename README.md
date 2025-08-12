@@ -20,9 +20,3 @@ This Application was deployed with Vercel. Check out our [Next.js deployment doc
 ```bash
 npm run dev
 ```
-
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed locally on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/`.
-
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
-
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
