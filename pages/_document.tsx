@@ -4,7 +4,7 @@ function Document() {
   return (
     <Html lang="en">
       <Head />
-      <body className="overflow-x-hidden">
+      <body>
         <Main />
         <NextScript />
       </body>
