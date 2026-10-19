@@ -1,8 +1,10 @@
 /* eslint-disable @next/next/no-img-element */
 import Link from "next/link";
 import React from "react";
+import { motion, useReducedMotion } from "framer-motion";
 import { Cursor, useTypewriter } from "react-simple-typewriter";
 import BackgroundCircles from "./BackgroundCircles";
+import Magnet from "./motion/Magnet";
 import { PageInfo } from "../typings";
 import { urlFor } from "../lib/sanity";
 
@@ -10,7 +12,15 @@ type Props = {
   pageInfo: PageInfo;
 };
 
+// Staggered entrance for the text block under the avatar
+const rise = (delay: number) => ({
+  initial: { opacity: 0, y: 20 },
+  animate: { opacity: 1, y: 0 },
+  transition: { duration: 0.7, delay, ease: [0.25, 0.1, 0.25, 1] },
+});
+
 export default function Hero({ pageInfo }: Props) {
+  const reduceMotion = useReducedMotion();
   const [text] = useTypewriter({
     words: [
       "Hello! My name is Gabe...",
@@ -21,42 +31,51 @@ export default function Hero({ pageInfo }: Props) {
     delaySpeed: 2000,
   });
 
+  // With reduced motion, skip the entrance and render in place
+  const entrance = (delay: number) => (reduceMotion ? {} : rise(delay));
+
   return (
     <div className="h-screen w-full flex flex-col space-y-8 items-center justify-center text-center overflow-hidden">
       <div className="relative flex justify-center items-center mt-40">
         <BackgroundCircles />
-        <img
-          className="h-64 w-64 object-cover rounded-full border-2 border-neutral/50 animatecss animatecss-backInUp animatecss-delay-2s"
-          src={urlFor(pageInfo.heroImage).url()}
-          alt="profile-picture"
-        />
+        {/* Avatar follows the cursor when it comes close */}
+        <Magnet className="z-20" padding={140} strength={5}>
+          <img
+            className="h-64 w-64 object-cover rounded-full border-2 border-neutral/50 animatecss animatecss-backInUp animatecss-delay-2s"
+            src={urlFor(pageInfo.heroImage).url()}
+            alt="profile-picture"
+          />
+        </Magnet>
       </div>
       <div className="z-20">
         {/* Job Role */}
-        <h2 className="text-sm sm:text-xl uppercase text-gray-500 pb-2 tracking-[8px] sm:tracking-[15px]">
+        <motion.h2
+          {...entrance(0.2)}
+          className="text-sm sm:text-xl uppercase text-gray-500 pb-2 tracking-[8px] sm:tracking-[15px]"
+        >
           {pageInfo.role}
-        </h2>
+        </motion.h2>
         {/* Typewriter */}
-        <h1 className="text-2xl sm:text-5xl lg:text-6xl font-semibold px-10">
+        <motion.h1
+          {...entrance(0.35)}
+          className="text-2xl sm:text-5xl lg:text-6xl font-semibold px-10"
+        >
           <span className="mr-3">{text}</span>
           {/* Color has to be Hexcode */}
           <Cursor cursorColor="#d83f87" />
-        </h1>
+        </motion.h1>
         {/* Directory */}
-        <div className="pt-16">
+        <motion.div {...entrance(0.5)} className="pt-16">
           <Link href="#about" className="px-1">
             <button className="heroButton">About</button>
           </Link>
           <Link href="#experience" className="px-1">
             <button className="heroButton">Experience</button>
           </Link>
-          {/* <Link href="#skills" className="px-1">
-            <button className="heroButton">Skills</button>
-          </Link> */}
           <Link href="#projects" className="px-1">
             <button className="heroButton">Projects</button>
           </Link>
-        </div>
+        </motion.div>
       </div>
     </div>
   );

@@ -2,6 +2,14 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Match the page background before hydration so there is no white flash on load. */
+@layer base {
+  html,
+  body {
+    background-color: #0e1017;
+  }
+}
+
 @layer components {
   .heroButton {
     @apply px-6 py-2 border border-[#242424] rounded-full uppercase text-sm font-bold tracking-widest text-gray-500 
@@ -18,5 +26,13 @@
   }
   .debug {
     @apply border border-2;
+  }
+  /* Big section titles: dark-to-light steel gradient, pink stays reserved for interaction */
+  .sectionTitle {
+    background: linear-gradient(180deg, #5f6b74 0%, #d7e2ea 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    padding-bottom: 0.08em;
   }
 }

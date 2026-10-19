@@ -4,10 +4,12 @@ import { groq } from "next-sanity";
 import { sanityClient } from '../../lib/sanity';
 import { Project } from "../../typings";
 
+// preview is a file asset, so resolve its URL for the <video> tag
 const query = groq`
   *[_type == "project"] {
     ...,
-    technologies[]->
+    technologies[]->,
+    preview { asset->{ url } }
   }
 `
 

@@ -59,6 +59,8 @@ export interface Project extends Sanitybody {
   linkToBuild: string;
   summary: string;
   technologies: Technology[];
+  // Optional looping video, resolved to a URL by the API route
+  preview?: { asset?: { url?: string } };
 }
 
 export interface Social extends Sanitybody {

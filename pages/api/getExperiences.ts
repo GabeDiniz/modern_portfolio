@@ -4,8 +4,9 @@ import { groq } from "next-sanity";
 import { sanityClient } from '../../lib/sanity';
 import { Experience } from "../../typings";
 
+// Newest role first
 const query = groq`
-  *[_type == "experience"] {
+  *[_type == "experience"] | order(dateStarted desc) {
     ...,
     technologies[]->
   }

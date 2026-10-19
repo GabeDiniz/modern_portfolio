@@ -33,5 +33,13 @@ export default {
       title: 'LinkToBuild',
       type: 'url',
     },
+    {
+      name: 'preview',
+      title: 'Preview video',
+      description:
+        'Optional short looping MP4 or WebM, shown instead of the image. For a GIF, just upload it as the Image.',
+      type: 'file',
+      options: { accept: 'video/mp4,video/webm' },
+    },
   ]
 }

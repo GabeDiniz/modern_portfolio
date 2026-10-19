@@ -1,113 +1,75 @@
-import React, { useEffect, useState } from "react";
-import { motion } from "framer-motion";
+/* eslint-disable @next/next/no-img-element */
+import React from "react";
+import { motion, MotionValue, useTransform } from "framer-motion";
 import { Experience } from "../typings";
 import { urlFor } from "../lib/sanity";
-import Image from "next/image";
-// import exp from 'constants';
+import TechStack from "./TechStack";
+import { experienceKey, experienceTech } from "../data/tech";
 
 type Props = {
   experience: Experience;
+  index: number;
+  total: number;
+  progress: MotionValue<number>;
+  stack: boolean;
 };
 
-export default function ExperienceCard({ experience }: Props) {
-  const regex = /( [0-9]{2} )/i;
-  // console.log(new Date(experience.dateStarted).toDateString().slice(4).replace(regex, " "))
+const formatDate = (d: string) =>
+  new Date(d).toLocaleDateString("en-US", { month: "short", year: "numeric" });
 
-  const [viewSummary, setViewSummary] = useState(true);
+// Vertical offset between stacked card tops, so earlier cards peek out above
+const STACK_STEP = 22;
 
-  function checkSize() {
-    // 1024 x 800 = 8.192 (dont fit)
-    // 1440 x 900 = 12.96 (fit)
-    // 700 x 875 = 6.125 (fit)
-    if (
-      (window.innerWidth < 600 && window.innerHeight < 1000) ||
-      window.innerHeight <= 800
-    ) {
-      setViewSummary(true);
-    } else {
-      setViewSummary(false);
-    }
-  }
-  useEffect(() => {
-    checkSize();
-    function handleResize() {
-      checkSize(); // Call checkSize to update viewSummary when the window is resized
-    }
+export default function ExperienceCard({ experience, index, total, progress, stack }: Props) {
+  // Cards further down the stack shrink the ones above them
+  const targetScale = 1 - (total - 1 - index) * 0.04;
+  const scale = useTransform(progress, [index / total, 1], [1, targetScale]);
 
-    window.addEventListener("resize", handleResize);
-
-    // Cleanup the event listener when the component is unmounted
-    return () => {
-      window.removeEventListener("resize", handleResize);
-    };
-  }, []);
+  const dates = `${formatDate(experience.dateStarted)} – ${
+    experience.isCurrentlyWorkingHere ? "Present" : formatDate(experience.dateEnded)
+  }`;
 
   return (
-    <article
-      className="flex flex-col relative rounded-lg items-center space-y-7 flex-shrink-0 w-full xs:w-[95%] md:w-[710px] 
-        xl:w-[1100px] xs:snap-center bg-bground_dark p-10 hover:opacity-100 opacity-70 transition-opacity duration-200"
+    <div
+      className={stack ? "sticky top-0 flex h-[80vh] items-start justify-center" : ""}
+      style={stack ? { paddingTop: `calc(5.5rem + ${index * STACK_STEP}px)` } : undefined}
     >
-      {/* Pink Overlay */}
-      {/* <div className='w-full z-0 absolute bg-highlight/30 left-0 h-[150px] -skew-y-3'/> */}
-      <motion.img
-        initial={{
-          y: -100,
-          opacity: 0,
-        }}
-        transition={{ duration: 1.2 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-        className="w-20 h-20 xl:w-[100px] xl:h-[100px] z-20 rounded-full object-cover object-center"
-        src={urlFor(experience?.companyImage).url()}
-      />
-      <div className="flex flex-col relative md:px-10 ">
-        <h4 className="uppercase text-base xs:text-lg sm:text-2xl md:text-3xl short:text-2xl font-light self-center text-center">
-          {experience.jobTitle}
-        </h4>
-        <p className="font-bold text-base xs:text-lg sm:text-2xl short:text-xl mt-1 self-center">
-          {experience.company}
-        </p>
-        <div className="flex flex-wrap space-x-2 my-2 self-center justify-center">
-          {/* Tech Used */}
-          {experience.technologies.map(
-            (technology, index) =>
-              technology?.image && (
-                <img
-                  key={index}
-                  className="h-6 w-6 sm:h-10 sm:w-10 short:h-6 short:w-6 rounded-full mb-1 sm:mb-0"
-                  src={urlFor(technology?.image).url()}
-                  alt=""
-                />
-              )
-          )}
-        </div>
-        <p className="uppercase py-5 text-gray-300 self-center text-center sm:text-left">
-          {new Date(experience.dateStarted)
-            .toDateString()
-            .slice(4)
-            .replace(regex, " ") + " - "}
-          {experience.isCurrentlyWorkingHere
-            ? "Present"
-            : new Date(experience.dateEnded)
-                .toDateString()
-                .slice(4)
-                .replace(regex, " ")}
-        </p>
-        {viewSummary ? (
-          <p className="text-sm text-center">
-            To view the job summary, please open this website on a larger device
-            or zoom out...
-          </p>
-        ) : (
-          <ul className="list-disc space-y-4 ml-5 text-xs md:text-sm xl:text-base">
-            {experience.points.map((point, i) => (
+      <motion.article
+        style={stack ? { scale, transformOrigin: "top center" } : undefined}
+        className="w-full rounded-3xl border border-white/10 bg-bground_dark p-6 shadow-[0_-12px_40px_rgba(0,0,0,0.45)] sm:p-8 md:p-10"
+      >
+        <div className="grid gap-6 md:grid-cols-[240px_1fr] md:gap-10">
+          {/* Who / when */}
+          <div className="flex flex-col gap-4">
+            <div className="flex items-center gap-4">
+              <img
+                src={urlFor(experience?.companyImage).url()}
+                alt=""
+                className="h-14 w-14 rounded-full object-cover object-center"
+              />
+              <div>
+                <p className="text-lg font-bold leading-tight">{experience.company}</p>
+                <p className="mt-1 text-xs uppercase tracking-[3px] text-gray-500">{dates}</p>
+              </div>
+            </div>
+            <h4 className="text-xl font-light uppercase leading-snug sm:text-2xl">
+              {experience.jobTitle}
+            </h4>
+            {/* Tech used: from data/tech.tsx, falling back to Sanity */}
+            <TechStack
+              slugs={experienceTech[experienceKey(experience.company, experience.jobTitle)]}
+              fallback={experience.technologies}
+            />
+          </div>
+
+          {/* What */}
+          <ul className="list-disc space-y-3 pl-5 text-sm leading-relaxed text-gray-300 lg:text-[15px]">
+            {experience.points?.map((point, i) => (
               <li key={i}>{point}</li>
             ))}
           </ul>
-        )}
-      </div>
-      {/* Pink Overlay */}
-      {/* <div className='w-full absolute top-6 bg-highlight/10 left-0 h-[150px] -skew-y-3'/> */}
-    </article>
+        </div>
+      </motion.article>
+    </div>
   );
 }

@@ -2,6 +2,7 @@ import React from "react";
 import { motion } from "framer-motion";
 import { PhoneIcon, MapPinIcon, EnvelopeIcon } from "@heroicons/react/24/solid";
 import { useForm, SubmitHandler } from "react-hook-form";
+import SectionHeading from "./SectionHeading";
 
 type Inputs = {
     name: string;
@@ -26,11 +27,9 @@ export default function ContactMe({}) {
             transition={{ duration: 1.5 }}
             className="flex relative flex-col text-center items-center max-w-7xl px-10 pb-28 mx-auto "
         >
-            <h3 className="uppercase tracking-[10px] text-gray-500 text-lg sm:text-2xl short:text-xl mt-28 md:mt-24">
-                {"<"}Contact Me{"/>"}
-            </h3>
+            <SectionHeading tag="Contact me" title="Let's talk" className="mt-28 md:mt-24" />
 
-            <div className="mt-6 sm:mt-10 short:mt-6 flex flex-col space-y-10">
+            <div className="mt-10 sm:mt-14 short:mt-8 flex flex-col space-y-10">
                 <h4 className="text-lg sm:text-2xl font-semibold text-center">
                     I would love to get to know you.{" "}
                     <span className="underline decoration-highlight/50">

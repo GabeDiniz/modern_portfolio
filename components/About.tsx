@@ -2,6 +2,8 @@ import React from "react";
 import { motion } from "framer-motion";
 import { PageInfo } from "../typings";
 import { urlFor } from "../lib/sanity";
+import AnimatedText from "./motion/AnimatedText";
+import SectionHeading from "./SectionHeading";
 
 type Props = {
   pageInfo: PageInfo;
@@ -15,9 +17,7 @@ export default function About({ pageInfo }: Props) {
       transition={{ duration: 1.5 }}
       className="flex flex-col mx-auto items-center text-center max-w-xl md:max-w-7xl px-10 py-20 space-y-8 xl:space-y-14"
     >
-      <h3 className="text-2xl uppercase tracking-[10px] text-gray-500">
-        {"<"}About Me{"/>"}
-      </h3>
+      <SectionHeading tag="About me" title="Who I am" />
 
       <div className="flex flex-col xl:flex-row mx-auto items-center">
         <motion.img
@@ -41,9 +41,11 @@ export default function About({ pageInfo }: Props) {
           <h4 className="mt-5 xl:mt-0 text-md xs:text-2xl md:text-3xl font-semibold">
             Oh, hello there..
           </h4>
-          <p className="text-xs xs:text-sm sm:text-lg md:text-lg lg:text-lg overflow-hidden xl:text-left">
-            {pageInfo?.backgroundInformation}
-          </p>
+          {/* Words brighten as the paragraph scrolls through the viewport */}
+          <AnimatedText
+            text={pageInfo?.backgroundInformation ?? ""}
+            className="text-xs xs:text-sm sm:text-lg md:text-lg lg:text-lg overflow-hidden xl:text-left"
+          />
         </div>
       </div>
     </motion.div>
