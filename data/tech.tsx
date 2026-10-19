@@ -103,6 +103,7 @@ export const projectTech: Record<string, TechSlug[]> = {
   "SpurHacks Dashboard": ["react", "typescript", "firebase", "tailwind", "vite"],
   SpurHacks: ["vite", "typescript", "tailwind"],
   HawkHacks: ["vite", "typescript", "tailwind", "react"],
+  "Candy Shopify Store": ["shopify", "javascript", "css"],
 };
 
 // Keyed by "Company / Job title" as they appear in Sanity.
