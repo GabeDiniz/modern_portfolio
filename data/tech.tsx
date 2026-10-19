@@ -28,6 +28,7 @@ import {
   SiSanity,
   SiShopify,
   SiSpringboot,
+  SiSqlite,
   SiTailwindcss,
   SiTeamcity,
   SiTypescript,
@@ -73,6 +74,7 @@ export const TECH = {
 
   // Data and infrastructure
   postgresql: { label: "PostgreSQL", icon: SiPostgresql, color: "#4169E1" },
+  sqlite: { label: "SQLite", icon: SiSqlite, color: "#5FB0E6" },
   firebase: { label: "Firebase", icon: SiFirebase, color: "#DD2C00" },
   aws: { label: "AWS", icon: FaAws, color: "#FF9900" },
   docker: { label: "Docker", icon: SiDocker, color: "#2496ED" },
@@ -99,7 +101,7 @@ export type TechSlug = keyof typeof TECH;
 // Keyed by the project's Title in Sanity.
 export const projectTech: Record<string, TechSlug[]> = {
   "Command Kit": ["python", "bash"],
-  "Discord Bot.v2": ["python", "discord"],
+  "Discord Bot.v2": ["python", "discord", "sqlite"],
   "SpurHacks Dashboard": ["react", "typescript", "firebase", "tailwind", "vite"],
   SpurHacks: ["vite", "typescript", "tailwind"],
   HawkHacks: ["vite", "typescript", "tailwind", "react"],
