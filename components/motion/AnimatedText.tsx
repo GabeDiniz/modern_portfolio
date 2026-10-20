@@ -22,6 +22,8 @@ export default function AnimatedText({ text, className }: Props) {
   const { scrollYProgress } = useScroll({
     target: ref,
     container: container ?? undefined,
+    // Run after refs attach; the default layout effect fires before the parent scroll div ref is set
+    layoutEffect: false,
     offset: ["start 0.85", "end 0.45"],
   });
 

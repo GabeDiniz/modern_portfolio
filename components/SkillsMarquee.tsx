@@ -63,6 +63,8 @@ export default function SkillsMarquee({ skills }: Props) {
   const { scrollYProgress } = useScroll({
     target: ref,
     container: container ?? undefined,
+    // Run after refs attach; the default layout effect fires before the parent scroll div ref is set
+    layoutEffect: false,
     offset: ["start end", "end start"],
   });
   // Content is tripled, so staying between -10% and -35% never shows a gap.
